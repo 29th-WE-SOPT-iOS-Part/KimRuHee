@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		5B2B4621270B6CC90074B585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B4620270B6CC90074B585 /* AppDelegate.swift */; };
 		5B2B4623270B6CC90074B585 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B4622270B6CC90074B585 /* SceneDelegate.swift */; };
-		5B2B4625270B6CC90074B585 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B4624270B6CC90074B585 /* ViewController.swift */; };
+		5B2B4625270B6CC90074B585 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B4624270B6CC90074B585 /* LoginVC.swift */; };
 		5B2B462A270B6CCC0074B585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2B4629270B6CCC0074B585 /* Assets.xcassets */; };
 		5B2B462D270B6CCC0074B585 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2B462B270B6CCC0074B585 /* LaunchScreen.storyboard */; };
 		5B2B463B270B744E0074B585 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B463A270B744E0074B585 /* UIView + Extension.swift */; };
 		5B324483270E183700CD52D6 /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B324482270E183700CD52D6 /* UITextField + Extension.swift */; };
+		5B324485270E1EDC00CD52D6 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B324484270E1EDC00CD52D6 /* UIColor + Extension.swift */; };
 		A1DB3182B180D8A44F60F25F /* Pods_Sopt29th_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1FA1544DF3043971FE0FA5 /* Pods_Sopt29th_Assignment.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,12 +23,13 @@
 		5B2B461D270B6CC90074B585 /* Sopt29th-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sopt29th-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2B4620270B6CC90074B585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B2B4622270B6CC90074B585 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5B2B4624270B6CC90074B585 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5B2B4624270B6CC90074B585 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		5B2B4629270B6CCC0074B585 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B2B462C270B6CCC0074B585 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B2B462E270B6CCC0074B585 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B2B463A270B744E0074B585 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		5B324482270E183700CD52D6 /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
+		5B324484270E1EDC00CD52D6 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		5F1FA1544DF3043971FE0FA5 /* Pods_Sopt29th_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sopt29th_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5F82FDB012770AC2B155F7 /* Pods-Sopt29th-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sopt29th-Assignment.release.xcconfig"; path = "Target Support Files/Pods-Sopt29th-Assignment/Pods-Sopt29th-Assignment.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,7 +122,7 @@
 		5B2B4638270B6D490074B585 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5B2B4624270B6CC90074B585 /* ViewController.swift */,
+				5B2B4624270B6CC90074B585 /* LoginVC.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -130,6 +132,7 @@
 			children = (
 				5B2B463A270B744E0074B585 /* UIView + Extension.swift */,
 				5B324482270E183700CD52D6 /* UITextField + Extension.swift */,
+				5B324484270E1EDC00CD52D6 /* UIColor + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -258,7 +261,8 @@
 			files = (
 				5B2B463B270B744E0074B585 /* UIView + Extension.swift in Sources */,
 				5B324483270E183700CD52D6 /* UITextField + Extension.swift in Sources */,
-				5B2B4625270B6CC90074B585 /* ViewController.swift in Sources */,
+				5B2B4625270B6CC90074B585 /* LoginVC.swift in Sources */,
+				5B324485270E1EDC00CD52D6 /* UIColor + Extension.swift in Sources */,
 				5B2B4621270B6CC90074B585 /* AppDelegate.swift in Sources */,
 				5B2B4623270B6CC90074B585 /* SceneDelegate.swift in Sources */,
 			);

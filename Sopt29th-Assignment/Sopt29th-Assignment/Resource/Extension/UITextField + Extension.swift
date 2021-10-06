@@ -20,7 +20,7 @@ extension UITextField {
         self.font = .boldSystemFont(ofSize: 15)
         self.backgroundColor = .white
         self.borderStyle = .line
-        self.layer.borderWidth = 0.5
+        self.layer.borderWidth = 2
         self.layer.borderColor = UIColor.lightGray.cgColor
         self.layer.cornerRadius = 7
         self.clipsToBounds = true
