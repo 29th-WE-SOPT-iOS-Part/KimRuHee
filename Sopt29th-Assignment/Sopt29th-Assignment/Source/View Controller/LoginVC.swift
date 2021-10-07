@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 import Then
 
@@ -56,7 +57,7 @@ class LoginVC: UIViewController {
         $0.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
     }
     
-    lazy var signupButton = UIButton().then {
+    let signupButton = UIButton().then {
         $0.setTitle("계정만들기", for: .normal)
         $0.setTitleColor(.mainBlue, for: .normal)
         $0.setTitleColor(.white, for: .highlighted)
@@ -64,7 +65,7 @@ class LoginVC: UIViewController {
         $0.addTarget(self, action: #selector(touchupSignupButton(_:)), for: .touchUpInside)
     }
     
-    lazy var signInButton = UIButton().then {
+    let signInButton = UIButton().then {
         $0.isUserInteractionEnabled = false
         $0.setTitle("다음", for: .normal)
         $0.setTitleColor(.white, for: .normal)

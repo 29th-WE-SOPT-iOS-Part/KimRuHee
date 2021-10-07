@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 import Then
 
@@ -36,7 +37,6 @@ class SignUpVC: UIViewController {
     let nameTextField = UITextField().then {
         $0.setTextField(placeholder: "이름을 입력해주세요", secure: false)
         $0.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
-        
     }
     
     let emailTextField = UITextField().then {
@@ -60,7 +60,7 @@ class SignUpVC: UIViewController {
         }
     }
     
-    lazy var signupButton = UIButton().then {
+    let signupButton = UIButton().then {
         $0.isUserInteractionEnabled = false
         $0.setTitle("다음", for: .normal)
         $0.setTitleColor(.white, for: .normal)
