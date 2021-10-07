@@ -140,7 +140,9 @@ class SignUpVC: UIViewController {
                   return
               }
         
-        if name.isEmpty || email.isEmpty || pw.isEmpty {
+        if name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ||
+            email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ||
+            pw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             signupButton.isUserInteractionEnabled = false
             signupButton.backgroundColor = .lightGray
             print("비활성화")
