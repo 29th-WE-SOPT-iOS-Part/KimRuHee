@@ -18,6 +18,7 @@
 		5B324487270E2ED800CD52D6 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B324486270E2ED800CD52D6 /* SignUpVC.swift */; };
 		5B8F56DF270F1FE100B8F943 /* CompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F56DE270F1FE100B8F943 /* CompleteVC.swift */; };
 		5B8F56E1270F26F300B8F943 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F56E0270F26F300B8F943 /* UIViewController + Extension.swift */; };
+		5B8F56E3270F661400B8F943 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B8F56E2270F661400B8F943 /* GoogleService-Info.plist */; };
 		A1DB3182B180D8A44F60F25F /* Pods_Sopt29th_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1FA1544DF3043971FE0FA5 /* Pods_Sopt29th_Assignment.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		5B324486270E2ED800CD52D6 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		5B8F56DE270F1FE100B8F943 /* CompleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteVC.swift; sourceTree = "<group>"; };
 		5B8F56E0270F26F300B8F943 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		5B8F56E2270F661400B8F943 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5F1FA1544DF3043971FE0FA5 /* Pods_Sopt29th_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sopt29th_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5F82FDB012770AC2B155F7 /* Pods-Sopt29th-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sopt29th-Assignment.release.xcconfig"; path = "Target Support Files/Pods-Sopt29th-Assignment/Pods-Sopt29th-Assignment.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 				5B2B4634270B6CDC0074B585 /* Source */,
 				5B2B4635270B6CE30074B585 /* Resource */,
 				5B2B462E270B6CCC0074B585 /* Info.plist */,
+				5B8F56E2270F661400B8F943 /* GoogleService-Info.plist */,
 			);
 			path = "Sopt29th-Assignment";
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				5B2B462D270B6CCC0074B585 /* LaunchScreen.storyboard in Resources */,
 				5B2B462A270B6CCC0074B585 /* Assets.xcassets in Resources */,
+				5B8F56E3270F661400B8F943 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
