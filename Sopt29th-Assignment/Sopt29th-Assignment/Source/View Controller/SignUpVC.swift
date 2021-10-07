@@ -128,7 +128,12 @@ class SignUpVC: UIViewController {
     }
     
     @objc func touchUpShowPWButton(_ sender: UIButton) {
-
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            pwTextField.isSecureTextEntry = false
+        } else {
+            pwTextField.isSecureTextEntry = true
+        }
     }
 }
 
