@@ -8,7 +8,6 @@
 import UIKit
 import SnapKit
 import Then
-import SwiftUI
 
 class SignUpVC: UIViewController {
     // MARK: - Properties
@@ -18,7 +17,7 @@ class SignUpVC: UIViewController {
         $0.text = "Google"
     }
     
-    let signUpLabel = UILabel().then {
+    let signupLabel = UILabel().then {
         $0.font = .boldSystemFont(ofSize: 35)
         $0.textColor = .black
         $0.text = "회원가입"
@@ -53,7 +52,7 @@ class SignUpVC: UIViewController {
     var configShow = UIButton.Configuration.plain()
     
     lazy var showButton = UIButton(configuration: configShow, primaryAction: nil).then {
-        $0.addTarget(self, action: #selector(touchUpShowButton(_:)), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(touchupShowButton(_:)), for: .touchUpInside)
         $0.configurationUpdateHandler = { btn in
             var config = btn.configuration
             config?.image = btn.isSelected ? UIImage(systemName: "checkmark.square.fill") : UIImage(systemName: "square")
@@ -61,26 +60,27 @@ class SignUpVC: UIViewController {
         }
     }
     
-    lazy var signUpButton = UIButton().then {
+    lazy var signupButton = UIButton().then {
         $0.isUserInteractionEnabled = false
         $0.setTitle("다음", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.titleLabel?.font = .boldSystemFont(ofSize: 18)
         $0.backgroundColor = .lightGray
         $0.layer.cornerRadius = 10
-        $0.addTarget(self, action: #selector(touchUpSignUpButton(_:)), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(touchupSignupButton(_:)), for: .touchUpInside)
     }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setupButtonConfig()
         setupAutoLayout()
         setupTextField()
     }
     
     // MARK: - Custom Method
-    // iOS15에서 나온 새로운 기능
+    // iOS15에서 나온 새로운 기능 한 번 써봤다...
     func setupButtonConfig() {
         configShow.title = "비밀번호 표시"
         configShow.baseForegroundColor = .black
@@ -90,15 +90,15 @@ class SignUpVC: UIViewController {
     }
     
     func setupAutoLayout() {
-        view.addSubviews([logoLabel, signUpLabel, fieldStackView,
-                          showButton, signUpButton])
+        view.addSubviews([logoLabel, signupLabel, fieldStackView,
+                          showButton, signupButton])
         
         logoLabel.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(20)
             make.centerX.equalToSuperview()
         }
         
-        signUpLabel.snp.makeConstraints { make in
+        signupLabel.snp.makeConstraints { make in
             make.top.equalTo(logoLabel.snp.bottom).offset(15)
             make.centerX.equalToSuperview()
         }
@@ -108,7 +108,7 @@ class SignUpVC: UIViewController {
         }
         
         fieldStackView.snp.makeConstraints { make in
-            make.top.equalTo(signUpLabel.snp.bottom).offset(80)
+            make.top.equalTo(signupLabel.snp.bottom).offset(80)
             make.leading.trailing.equalToSuperview().inset(30)
             make.centerX.equalToSuperview()
         }
@@ -118,7 +118,7 @@ class SignUpVC: UIViewController {
             make.leading.equalToSuperview().inset(20)
         }
         
-        signUpButton.snp.makeConstraints { make in
+        signupButton.snp.makeConstraints { make in
             make.top.equalTo(fieldStackView.snp.bottom).offset(80)
             make.leading.trailing.equalToSuperview().inset(30)
             make.width.equalTo(80)
@@ -141,28 +141,28 @@ class SignUpVC: UIViewController {
               }
         
         if name.isEmpty || email.isEmpty || pw.isEmpty {
-            signUpButton.isUserInteractionEnabled = false
-            signUpButton.backgroundColor = .lightGray
+            signupButton.isUserInteractionEnabled = false
+            signupButton.backgroundColor = .lightGray
             print("비활성화")
             
         } else {
-            signUpButton.isUserInteractionEnabled = true
-            signUpButton.backgroundColor = .mainBlue
+            signupButton.isUserInteractionEnabled = true
+            signupButton.backgroundColor = .mainBlue
             print("활성화")
         }
     }
     
-    @objc func touchUpSignUpButton(_ sender: UIButton) {
-        
-    }
-    
-    @objc func touchUpShowButton(_ sender: UIButton) {
+    @objc func touchupShowButton(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
             pwTextField.isSecureTextEntry = false
         } else {
             pwTextField.isSecureTextEntry = true
         }
+    }
+    
+    @objc func touchupSignupButton(_ sender: UIButton) {
+        
     }
 }
 

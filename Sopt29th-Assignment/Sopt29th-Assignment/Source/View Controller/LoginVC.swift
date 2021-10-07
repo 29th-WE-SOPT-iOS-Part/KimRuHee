@@ -53,12 +53,12 @@ class LoginVC: UIViewController {
         $0.setTextField(placeholder: "비밀번호 입력", secure: true)
     }
     
-    lazy var signUpButton = UIButton().then {
+    lazy var signupButton = UIButton().then {
         $0.setTitle("계정만들기", for: .normal)
         $0.setTitleColor(.mainBlue, for: .normal)
         $0.setTitleColor(.white, for: .highlighted)
         $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
-        $0.addTarget(self, action: #selector(touchUpSignUpButton(_:)), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(touchupSignupButton(_:)), for: .touchUpInside)
     }
     
     lazy var signInButton = UIButton().then {
@@ -67,7 +67,7 @@ class LoginVC: UIViewController {
         $0.titleLabel?.font = .boldSystemFont(ofSize: 18)
         $0.backgroundColor = .mainBlue
         $0.layer.cornerRadius = 10
-        $0.addTarget(self, action: #selector(touchUpSignInButton(_:)), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(touchupSignInButton(_:)), for: .touchUpInside)
     }
     
     // MARK: - Lifecycle
@@ -85,7 +85,7 @@ class LoginVC: UIViewController {
     
     func setupAutoLayout() {
         view.addSubviews([logoLabel, loginLabel, explainLabel,
-                          fieldStackView, signUpButton, signInButton])
+                          fieldStackView, signupButton, signInButton])
         
         logoLabel.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(20)
@@ -113,14 +113,14 @@ class LoginVC: UIViewController {
             make.centerX.equalToSuperview()
         }
         
-        signUpButton.snp.makeConstraints { make in
+        signupButton.snp.makeConstraints { make in
             make.top.equalTo(fieldStackView.snp.bottom).offset(110)
             make.leading.equalToSuperview().inset(30)
         }
         
         signInButton.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(30)
-            make.centerY.equalTo(signUpButton.snp.centerY)
+            make.centerY.equalTo(signupButton.snp.centerY)
             make.width.equalTo(80)
             make.height.equalTo(50)
         }
@@ -134,11 +134,12 @@ class LoginVC: UIViewController {
     
     // MARK: - @objc
     
-    @objc func touchUpSignUpButton(_ sender: UIButton) {
-        
+    @objc func touchupSignupButton(_ sender: UIButton) {
+        let vc = SignUpVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc func touchUpSignInButton(_ sender: UIButton) {
+    @objc func touchupSignInButton(_ sender: UIButton) {
         
     }
 }

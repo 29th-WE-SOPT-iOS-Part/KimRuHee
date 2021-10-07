@@ -16,6 +16,7 @@
 		5B324483270E183700CD52D6 /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B324482270E183700CD52D6 /* UITextField + Extension.swift */; };
 		5B324485270E1EDC00CD52D6 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B324484270E1EDC00CD52D6 /* UIColor + Extension.swift */; };
 		5B324487270E2ED800CD52D6 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B324486270E2ED800CD52D6 /* SignUpVC.swift */; };
+		5B8F56DF270F1FE100B8F943 /* CompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F56DE270F1FE100B8F943 /* CompleteVC.swift */; };
 		A1DB3182B180D8A44F60F25F /* Pods_Sopt29th_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1FA1544DF3043971FE0FA5 /* Pods_Sopt29th_Assignment.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		5B324482270E183700CD52D6 /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
 		5B324484270E1EDC00CD52D6 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		5B324486270E2ED800CD52D6 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		5B8F56DE270F1FE100B8F943 /* CompleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteVC.swift; sourceTree = "<group>"; };
 		5F1FA1544DF3043971FE0FA5 /* Pods_Sopt29th_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sopt29th_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5F82FDB012770AC2B155F7 /* Pods-Sopt29th-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sopt29th-Assignment.release.xcconfig"; path = "Target Support Files/Pods-Sopt29th-Assignment/Pods-Sopt29th-Assignment.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +128,7 @@
 			children = (
 				5B2B4624270B6CC90074B585 /* LoginVC.swift */,
 				5B324486270E2ED800CD52D6 /* SignUpVC.swift */,
+				5B8F56DE270F1FE100B8F943 /* CompleteVC.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				5B324483270E183700CD52D6 /* UITextField + Extension.swift in Sources */,
 				5B2B4625270B6CC90074B585 /* LoginVC.swift in Sources */,
 				5B324485270E1EDC00CD52D6 /* UIColor + Extension.swift in Sources */,
+				5B8F56DF270F1FE100B8F943 /* CompleteVC.swift in Sources */,
 				5B2B4621270B6CC90074B585 /* AppDelegate.swift in Sources */,
 				5B2B4623270B6CC90074B585 /* SceneDelegate.swift in Sources */,
 			);
