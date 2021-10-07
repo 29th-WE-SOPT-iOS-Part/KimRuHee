@@ -79,7 +79,7 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         configUI()
         setupAutoLayout()
-        setupTextField()
+        hideKeyboard()
     }
     
     // MARK: - Custom Method
@@ -130,12 +130,6 @@ class LoginVC: UIViewController {
         }
     }
     
-    func setupTextField() {
-        nameTextField.delegate = self
-        emailTextField.delegate = self
-        pwTextField.delegate = self
-    }
-    
     // MARK: - @objc
     @objc func textFieldDidChange(textField: UITextField){
         guard let name = nameTextField.text,
@@ -149,12 +143,10 @@ class LoginVC: UIViewController {
             pw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             signInButton.isUserInteractionEnabled = false
             signInButton.backgroundColor = .lightGray
-            print("비활성화")
             
         } else {
             signInButton.isUserInteractionEnabled = true
             signInButton.backgroundColor = .mainBlue
-            print("활성화")
         }
     }
     
@@ -168,14 +160,6 @@ class LoginVC: UIViewController {
         vc.name = nameTextField.text
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
-    }
-}
-
-// MARK: - UITextFieldDelegate
-extension LoginVC: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        pwTextField.resignFirstResponder()
-        return true
     }
 }
 

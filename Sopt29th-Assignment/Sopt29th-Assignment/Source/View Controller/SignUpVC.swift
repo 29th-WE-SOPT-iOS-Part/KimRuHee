@@ -76,11 +76,11 @@ class SignUpVC: UIViewController {
         view.backgroundColor = .white
         setupButtonConfig()
         setupAutoLayout()
-        setupTextField()
+        hideKeyboard()
     }
     
     // MARK: - Custom Method
-    // iOS15에서 나온 새로운 기능 한 번 써봤다...
+    // iOS15에서 나온 새로운 기능
     func setupButtonConfig() {
         configShow.title = "비밀번호 표시"
         configShow.baseForegroundColor = .black
@@ -126,12 +126,6 @@ class SignUpVC: UIViewController {
         }
     }
     
-    func setupTextField() {
-        nameTextField.delegate = self
-        emailTextField.delegate = self
-        pwTextField.delegate = self
-    }
-    
     // MARK: - @objc
     @objc func textFieldDidChange(textField: UITextField){
         guard let name = nameTextField.text,
@@ -145,12 +139,10 @@ class SignUpVC: UIViewController {
             pw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             signupButton.isUserInteractionEnabled = false
             signupButton.backgroundColor = .lightGray
-            print("비활성화")
             
         } else {
             signupButton.isUserInteractionEnabled = true
             signupButton.backgroundColor = .mainBlue
-            print("활성화")
         }
     }
     
@@ -168,13 +160,5 @@ class SignUpVC: UIViewController {
         vc.name = nameTextField.text
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
-    }
-}
-
-// MARK: - UITextFieldDelegate
-extension SignUpVC: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        pwTextField.resignFirstResponder()
-        return true
     }
 }
