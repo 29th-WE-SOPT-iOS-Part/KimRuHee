@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Firebase
+import FirebaseAuth
 import SnapKit
 import Then
 
@@ -156,9 +158,37 @@ class SignUpVC: UIViewController {
     }
     
     @objc func touchupSignupButton(_ sender: UIButton) {
-        let vc = CompleteVC()
-        vc.name = nameTextField.text
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
+        guard let name = nameTextField.text, !name.isEmpty,
+              let email = emailTextField.text, !email.isEmpty,
+              let pw = pwTextField.text, !pw.isEmpty else {
+                  print("다 입력해주세요.")
+                  return
+              }
+        
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: pw) { [self] (result, error) in
+            if error != nil { // error가 nil이 아니다 => error에 뭐가 있다? => error가 있다는 뜻
+                print("회원가입 실패")
+                
+            } else {
+                // 데이터 추가
+//                let db = Firestore.firestore()
+//                var ref: DocumentReference? = nil
+//                ref = db.collection("users").addDocument(data: ["이름":name,
+//                                                                "이메일":email,
+//                                                                "uid":result!.user.uid]) { (error) in
+//
+//                    if error != nil {
+//                        print(error?.localizedDescription ?? "사용자 데이터 저장 오류")
+//                    } else {
+//                        print("데이터 추가", ref!.documentID)
+//                    }
+//                }
+                // home으로 화면전환
+                let vc = CompleteVC()
+                vc.name = self.nameTextField.text
+                vc.modalPresentationStyle = .fullScreen
+                present(vc, animated: true, completion: nil)
+            }
+        }
     }
 }
