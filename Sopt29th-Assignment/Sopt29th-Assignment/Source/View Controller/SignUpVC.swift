@@ -36,20 +36,24 @@ class SignUpVC: UIViewController {
     
     let nameTextField = UITextField().then {
         $0.setTextField(placeholder: "이름을 입력해주세요", secure: false)
+        $0.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
+        
     }
     
     let emailTextField = UITextField().then {
         $0.setTextField(placeholder: "이메일 또는 휴대전화", secure: false)
+        $0.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
     }
     
     let pwTextField = UITextField().then {
         $0.setTextField(placeholder: "비밀번호 입력", secure: true)
+        $0.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
     }
     
-    var config = UIButton.Configuration.plain()
+    var configShow = UIButton.Configuration.plain()
     
-    lazy var showPWButton = UIButton(configuration: config, primaryAction: nil).then {
-        $0.addTarget(self, action: #selector(touchUpShowPWButton(_:)), for: .touchUpInside)
+    lazy var showButton = UIButton(configuration: configShow, primaryAction: nil).then {
+        $0.addTarget(self, action: #selector(touchUpShowButton(_:)), for: .touchUpInside)
         $0.configurationUpdateHandler = { btn in
             var config = btn.configuration
             config?.image = btn.isSelected ? UIImage(systemName: "checkmark.square.fill") : UIImage(systemName: "square")
@@ -58,10 +62,11 @@ class SignUpVC: UIViewController {
     }
     
     lazy var signUpButton = UIButton().then {
+        $0.isUserInteractionEnabled = false
         $0.setTitle("다음", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.titleLabel?.font = .boldSystemFont(ofSize: 18)
-        $0.backgroundColor = .mainBlue
+        $0.backgroundColor = .lightGray
         $0.layer.cornerRadius = 10
         $0.addTarget(self, action: #selector(touchUpSignUpButton(_:)), for: .touchUpInside)
     }
@@ -69,25 +74,24 @@ class SignUpVC: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configUI()
+        setupButtonConfig()
         setupAutoLayout()
+        setupTextField()
     }
     
     // MARK: - Custom Method
-    func configUI() {
-        view.backgroundColor = .white
-        
-        // iOS15에서 나온 새로운 기능
-        config.imagePlacement = .leading
-        config.imagePadding = 10
-        config.title = "비밀번호 표시"
-        config.baseForegroundColor = .black
-        config.baseBackgroundColor = .clear
+    // iOS15에서 나온 새로운 기능
+    func setupButtonConfig() {
+        configShow.title = "비밀번호 표시"
+        configShow.baseForegroundColor = .black
+        configShow.baseBackgroundColor = .clear
+        configShow.imagePlacement = .leading
+        configShow.imagePadding = 10
     }
-        
+    
     func setupAutoLayout() {
         view.addSubviews([logoLabel, signUpLabel, fieldStackView,
-                          showPWButton, signUpButton])
+                          showButton, signUpButton])
         
         logoLabel.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(20)
@@ -109,7 +113,7 @@ class SignUpVC: UIViewController {
             make.centerX.equalToSuperview()
         }
         
-        showPWButton.snp.makeConstraints { make in
+        showButton.snp.makeConstraints { make in
             make.top.equalTo(fieldStackView.snp.bottom).offset(10)
             make.leading.equalToSuperview().inset(20)
         }
@@ -122,12 +126,37 @@ class SignUpVC: UIViewController {
         }
     }
     
+    func setupTextField() {
+        nameTextField.delegate = self
+        emailTextField.delegate = self
+        pwTextField.delegate = self
+    }
+    
     // MARK: - @objc
+    @objc func textFieldDidChange(textField: UITextField){
+        guard let name = nameTextField.text,
+              let email = emailTextField.text,
+              let pw = pwTextField.text else {
+                  return
+              }
+        
+        if name.isEmpty || email.isEmpty || pw.isEmpty {
+            signUpButton.isUserInteractionEnabled = false
+            signUpButton.backgroundColor = .lightGray
+            print("비활성화")
+            
+        } else {
+            signUpButton.isUserInteractionEnabled = true
+            signUpButton.backgroundColor = .mainBlue
+            print("활성화")
+        }
+    }
+    
     @objc func touchUpSignUpButton(_ sender: UIButton) {
         
     }
     
-    @objc func touchUpShowPWButton(_ sender: UIButton) {
+    @objc func touchUpShowButton(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
             pwTextField.isSecureTextEntry = false
@@ -137,3 +166,10 @@ class SignUpVC: UIViewController {
     }
 }
 
+// MARK: - UITextFieldDelegate
+extension SignUpVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        pwTextField.resignFirstResponder()
+        return true
+    }
+}

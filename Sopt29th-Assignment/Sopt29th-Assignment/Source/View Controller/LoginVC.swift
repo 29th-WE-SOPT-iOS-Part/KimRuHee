@@ -75,6 +75,7 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         configUI()
         setupAutoLayout()
+        setupTextField()
     }
     
     // MARK: - Custom Method
@@ -125,13 +126,28 @@ class LoginVC: UIViewController {
         }
     }
     
+    func setupTextField() {
+        nameTextField.delegate = self
+        emailTextField.delegate = self
+        pwTextField.delegate = self
+    }
+    
     // MARK: - @objc
+    
     @objc func touchUpSignUpButton(_ sender: UIButton) {
         
     }
     
     @objc func touchUpSignInButton(_ sender: UIButton) {
         
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension LoginVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        pwTextField.resignFirstResponder()
+        return true
     }
 }
 
