@@ -43,14 +43,17 @@ class LoginVC: UIViewController {
     
     let nameTextField = UITextField().then {
         $0.setTextField(placeholder: "이름을 입력해주세요", secure: false)
+        $0.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
     }
     
     let emailTextField = UITextField().then {
         $0.setTextField(placeholder: "이메일 또는 휴대전화", secure: false)
+        $0.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
     }
     
     let pwTextField = UITextField().then {
         $0.setTextField(placeholder: "비밀번호 입력", secure: true)
+        $0.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
     }
     
     lazy var signupButton = UIButton().then {
@@ -62,10 +65,11 @@ class LoginVC: UIViewController {
     }
     
     lazy var signInButton = UIButton().then {
+        $0.isUserInteractionEnabled = false
         $0.setTitle("다음", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.titleLabel?.font = .boldSystemFont(ofSize: 18)
-        $0.backgroundColor = .mainBlue
+        $0.backgroundColor = .lightGray
         $0.layer.cornerRadius = 10
         $0.addTarget(self, action: #selector(touchupSignInButton(_:)), for: .touchUpInside)
     }
@@ -133,6 +137,24 @@ class LoginVC: UIViewController {
     }
     
     // MARK: - @objc
+    @objc func textFieldDidChange(textField: UITextField){
+        guard let name = nameTextField.text,
+              let email = emailTextField.text,
+              let pw = pwTextField.text else {
+                  return
+              }
+        
+        if name.isEmpty || email.isEmpty || pw.isEmpty {
+            signInButton.isUserInteractionEnabled = false
+            signInButton.backgroundColor = .lightGray
+            print("비활성화")
+            
+        } else {
+            signInButton.isUserInteractionEnabled = true
+            signInButton.backgroundColor = .mainBlue
+            print("활성화")
+        }
+    }
     
     @objc func touchupSignupButton(_ sender: UIButton) {
         let vc = SignUpVC()
@@ -140,7 +162,10 @@ class LoginVC: UIViewController {
     }
     
     @objc func touchupSignInButton(_ sender: UIButton) {
-        
+        let vc = CompleteVC()
+        vc.name = nameTextField.text
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
 }
 

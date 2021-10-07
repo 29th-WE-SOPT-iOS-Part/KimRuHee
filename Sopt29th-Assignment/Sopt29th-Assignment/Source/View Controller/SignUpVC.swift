@@ -162,7 +162,10 @@ class SignUpVC: UIViewController {
     }
     
     @objc func touchupSignupButton(_ sender: UIButton) {
-        
+        let vc = CompleteVC()
+        vc.name = nameTextField.text
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
 }
 

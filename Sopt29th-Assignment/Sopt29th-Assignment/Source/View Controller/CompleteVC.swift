@@ -22,7 +22,6 @@ class CompleteVC: UIViewController {
     private var welcomeLabel = UILabel().then {
         $0.font = .boldSystemFont(ofSize: 35)
         $0.textColor = .black
-        $0.text = "000님\n환영합니다!"
         $0.textAlignment = .center
         $0.numberOfLines = 2
     }
@@ -41,6 +40,7 @@ class CompleteVC: UIViewController {
         super.viewDidLoad()
         configUI()
         setupAutoLayout()
+        setupData()
     }
     
     // MARK: - Custom Method
@@ -70,6 +70,13 @@ class CompleteVC: UIViewController {
         }
     }
     
+    func setupData() {
+        if let name = name {
+            welcomeLabel.text = "\(name)님\n환영합니다!"
+        }
+    }
+    
+    // MARK: - @objc
     @objc func touchupCompleteButton(_ sender: UIButton) {
         
     }
