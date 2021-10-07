@@ -133,6 +133,17 @@ class LoginVC: UIViewController {
         }
     }
     
+    func getUserProfile() {
+        // 사용자 프로필 가져오기
+        if let currentEmail = FirebaseAuth.Auth.auth().currentUser?.email {
+            let vc = CompleteVC()
+            print("파이어베이스 로그인 성공", currentEmail)
+            vc.name = nameTextField.text
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+        }
+    }
+    
     // MARK: - @objc
     @objc func textFieldDidChange(textField: UITextField){
         guard let name = nameTextField.text,
@@ -159,10 +170,28 @@ class LoginVC: UIViewController {
     }
     
     @objc func touchupSignInButton(_ sender: UIButton) {
-        let vc = CompleteVC()
-        vc.name = nameTextField.text
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
+        guard let email = emailTextField.text, !email.isEmpty,
+              let pw = pwTextField.text, !pw.isEmpty else {
+                  print("이메일과 패스워드를 입력해주세요.")
+                  return
+              }
+        
+        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: pw) { [weak self] user, error in
+            guard let self = self else { return }
+            // 에러가 나거나 유저가 없을 경우
+            if let error = error, user == nil {
+                let alert = UIAlertController(
+                    title: "로그인 실패",
+                    message: error.localizedDescription,
+                    preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "확인", style: .default))
+                self.present(alert, animated: true, completion: nil)
+                
+            } else { // 성공이면 화면전환하고 프로필 가져오기
+                self.getUserProfile()
+            }
+        }
     }
 }
 
