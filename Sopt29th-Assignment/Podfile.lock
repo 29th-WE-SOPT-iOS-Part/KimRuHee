@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (5.4.4)
+  - Firebase/Analytics (8.8.0):
+    - Firebase/Core
   - Firebase/Auth (8.8.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 8.8.0)
@@ -106,6 +108,7 @@ PODS:
   - Then (2.7.0)
 
 DEPENDENCIES:
+  - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
   - Kingfisher (~> 6.0)
@@ -158,6 +161,6 @@ SPEC CHECKSUMS:
   SwiftLint: e96c0a8c770c7ebbc4d36c55baf9096bb65c4584
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: c3e0e27b8a73d2beebe814b49acbfa5a21cc3366
+PODFILE CHECKSUM: af6d33e5293c725d80e1bad9ecc338f0b7171510
 
 COCOAPODS: 1.11.2

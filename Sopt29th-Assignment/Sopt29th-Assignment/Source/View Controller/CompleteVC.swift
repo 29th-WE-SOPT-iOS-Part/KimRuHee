@@ -26,7 +26,7 @@ class CompleteVC: UIViewController {
         $0.font = .boldSystemFont(ofSize: 35)
         $0.textColor = .black
         $0.textAlignment = .center
-        $0.numberOfLines = 2
+        $0.numberOfLines = 0
     }
     
     let completeButton = UIButton().then {
