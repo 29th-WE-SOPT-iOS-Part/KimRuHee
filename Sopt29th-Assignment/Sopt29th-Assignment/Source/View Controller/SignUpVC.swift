@@ -48,10 +48,14 @@ class SignUpVC: UIViewController {
         $0.setTextField(placeholder: "비밀번호 입력", secure: true)
         $0.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
     }
-    
-    var configShow = UIButton.Configuration.plain()
-    
+        
     lazy var showButton = UIButton(configuration: configShow, primaryAction: nil).then {
+        var configShow = UIButton.Configuration.plain()
+        configShow.title = "비밀번호 표시"
+        configShow.baseForegroundColor = .black
+        configShow.baseBackgroundColor = .clear
+        configShow.imagePlacement = .leading
+        configShow.imagePadding = 10
         $0.addTarget(self, action: #selector(touchupShowButton(_:)), for: .touchUpInside)
         $0.configurationUpdateHandler = { btn in
             var config = btn.configuration
@@ -74,21 +78,11 @@ class SignUpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        setupButtonConfig()
         setupAutoLayout()
         hideKeyboard()
     }
     
     // MARK: - Custom Method
-    // iOS15에서 나온 새로운 기능
-    func setupButtonConfig() {
-        configShow.title = "비밀번호 표시"
-        configShow.baseForegroundColor = .black
-        configShow.baseBackgroundColor = .clear
-        configShow.imagePlacement = .leading
-        configShow.imagePadding = 10
-    }
-    
     func setupAutoLayout() {
         view.addSubviews([logoLabel, signupLabel, fieldStackView,
                           showButton, signupButton])
