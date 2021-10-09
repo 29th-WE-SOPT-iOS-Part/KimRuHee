@@ -16,6 +16,11 @@
 		5B4F02A727082AD200C04D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F02A627082AD200C04D75 /* Assets.xcassets */; };
 		5B4F02AA27082AD200C04D75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F02A827082AD200C04D75 /* LaunchScreen.storyboard */; };
 		5B4F02B2270837EA00C04D75 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F02B1270837EA00C04D75 /* SecondViewController.swift */; };
+		5B8799322711600600148563 /* AutoLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8799312711600600148563 /* AutoLayout.storyboard */; };
+		5B87993427117C5400148563 /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B87993327117C5400148563 /* Tabbar.storyboard */; };
+		5B8799362711841D00148563 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8799352711841D00148563 /* CustomTabBarController.swift */; };
+		5B8799382711842700148563 /* OrangeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8799372711842700148563 /* OrangeVC.swift */; };
+		5B87993A2711844900148563 /* PurpleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8799392711844900148563 /* PurpleVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		5B4F02A927082AD200C04D75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B4F02AB27082AD200C04D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B4F02B1270837EA00C04D75 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		5B8799312711600600148563 /* AutoLayout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AutoLayout.storyboard; sourceTree = "<group>"; };
+		5B87993327117C5400148563 /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
+		5B8799352711841D00148563 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		5B8799372711842700148563 /* OrangeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeVC.swift; sourceTree = "<group>"; };
+		5B8799392711844900148563 /* PurpleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +75,8 @@
 			children = (
 				5B4F02A327082ACD00C04D75 /* Main.storyboard */,
 				5B4F02A827082AD200C04D75 /* LaunchScreen.storyboard */,
+				5B8799312711600600148563 /* AutoLayout.storyboard */,
+				5B87993327117C5400148563 /* Tabbar.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -103,6 +115,9 @@
 				5B4F02B1270837EA00C04D75 /* SecondViewController.swift */,
 				5B2B460D2708408A0074B585 /* FirstViewController.swift */,
 				5B2B460F270840930074B585 /* ResultViewController.swift */,
+				5B8799352711841D00148563 /* CustomTabBarController.swift */,
+				5B8799372711842700148563 /* OrangeVC.swift */,
+				5B8799392711844900148563 /* PurpleVC.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -174,9 +189,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B87993427117C5400148563 /* Tabbar.storyboard in Resources */,
 				5B4F02AA27082AD200C04D75 /* LaunchScreen.storyboard in Resources */,
 				5B4F02A727082AD200C04D75 /* Assets.xcassets in Resources */,
 				5B4F02A527082ACD00C04D75 /* Main.storyboard in Resources */,
+				5B8799322711600600148563 /* AutoLayout.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,10 +205,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B4F02B2270837EA00C04D75 /* SecondViewController.swift in Sources */,
+				5B8799362711841D00148563 /* CustomTabBarController.swift in Sources */,
 				5B4F02A227082ACD00C04D75 /* ViewController.swift in Sources */,
 				5B2B4610270840930074B585 /* ResultViewController.swift in Sources */,
 				5B4F029E27082ACD00C04D75 /* AppDelegate.swift in Sources */,
+				5B87993A2711844900148563 /* PurpleVC.swift in Sources */,
 				5B4F02A027082ACD00C04D75 /* SceneDelegate.swift in Sources */,
+				5B8799382711842700148563 /* OrangeVC.swift in Sources */,
 				5B2B460E2708408A0074B585 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
