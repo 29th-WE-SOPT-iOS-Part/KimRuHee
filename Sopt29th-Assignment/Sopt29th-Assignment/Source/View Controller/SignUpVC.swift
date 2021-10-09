@@ -9,6 +9,7 @@ import UIKit
 
 import Firebase
 import FirebaseAuth
+import FirebaseFirestore
 import SnapKit
 import Then
 
@@ -171,18 +172,18 @@ class SignUpVC: UIViewController {
                 
             } else {
                 // 데이터 추가
-//                let db = Firestore.firestore()
-//                var ref: DocumentReference? = nil
-//                ref = db.collection("users").addDocument(data: ["이름":name,
-//                                                                "이메일":email,
-//                                                                "uid":result!.user.uid]) { (error) in
-//
-//                    if error != nil {
-//                        print(error?.localizedDescription ?? "사용자 데이터 저장 오류")
-//                    } else {
-//                        print("데이터 추가", ref!.documentID)
-//                    }
-//                }
+                let db = Firestore.firestore()
+                var ref: DocumentReference? = nil
+                ref = db.collection("users").addDocument(data: ["이름":name,
+                                                                "이메일":email,
+                                                                "uid":result!.user.uid]) { (error) in
+
+                    if error != nil {
+                        print(error?.localizedDescription ?? "사용자 데이터 저장 오류")
+                    } else {
+                        print("데이터 추가", ref!.documentID)
+                    }
+                }
                 // home으로 화면전환
                 let vc = CompleteVC()
                 vc.name = self.nameTextField.text
