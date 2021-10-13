@@ -14,6 +14,12 @@ extension UITextField {
         self.leftViewMode = .always
     }
     
+    func addRightPadding() {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.frame.size.height))
+        self.rightView = paddingView
+        self.rightViewMode = .always
+    }
+    
     func setTextField(placeholder: String, secure: Bool) {
         self.placeholder = placeholder
         self.isSecureTextEntry = secure
@@ -25,5 +31,6 @@ extension UITextField {
         self.layer.cornerRadius = 7
         self.clipsToBounds = true
         self.addLeftPadding()
+        self.addRightPadding()
     }
 }
