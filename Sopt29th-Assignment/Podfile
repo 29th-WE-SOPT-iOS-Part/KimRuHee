@@ -12,7 +12,6 @@ target 'Sopt29th-Assignment' do
   pod 'lottie-ios'
   pod 'Moya', '~> 14.0'
   pod 'Kingfisher', '~> 6.0'
-  pod 'SwiftLint'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'

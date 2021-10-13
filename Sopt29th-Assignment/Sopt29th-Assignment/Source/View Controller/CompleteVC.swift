@@ -29,7 +29,7 @@ class CompleteVC: UIViewController {
         $0.numberOfLines = 0
     }
     
-    let completeButton = UIButton().then {
+    private let completeButton = UIButton().then {
         $0.setTitle("확인", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.titleLabel?.font = .boldSystemFont(ofSize: 18)
@@ -38,7 +38,7 @@ class CompleteVC: UIViewController {
         $0.addTarget(self, action: #selector(touchupCompleteButton(_:)), for: .touchUpInside)
     }
     
-    let logoutButton = UIButton().then {
+    private let logoutButton = UIButton().then {
         $0.setTitle("로그아웃", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.titleLabel?.font = .boldSystemFont(ofSize: 18)

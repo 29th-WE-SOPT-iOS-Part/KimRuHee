@@ -18,7 +18,7 @@ class LoginVC: UIViewController {
     // MARK: - Properties
     fileprivate var currentNonce: String?
 
-    let logoLabel = UILabel().then {
+    private let logoLabel = UILabel().then {
         $0.font = .boldSystemFont(ofSize: 50)
         $0.textColor = .mainBlue
         $0.text = "Google"
@@ -57,7 +57,7 @@ class LoginVC: UIViewController {
         $0.setTextField(placeholder: "비밀번호 입력", secure: true)
     }
     
-    let appleButton = ASAuthorizationAppleIDButton().then {
+    private let appleButton = ASAuthorizationAppleIDButton().then {
         $0.addTarget(self, action: #selector(touchUpAppleButton(_:)), for: .touchUpInside)
         $0.layer.cornerRadius = 7
         $0.clipsToBounds = true
@@ -98,7 +98,6 @@ class LoginVC: UIViewController {
     func setupAutoLayout() {
         view.addSubviews([logoLabel, loginLabel, explainLabel,
                           fieldStackView, appleButton, signupButton, signInButton])
-                          fieldStackView, signupButton, signInButton])
         fieldStackView.addArrangedSubviews([nameTextField, emailTextField, pwTextField])
         
         logoLabel.snp.makeConstraints { make in
