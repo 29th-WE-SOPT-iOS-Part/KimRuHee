@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1UP-Yd-Mbx">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BUi-eh-aHB">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,17 +13,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sopt29th_Seminar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="배고파요. 종로불돼지 먹고싶어. 캐치미 짱" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJi-4H-5c6">
-                                <rect key="frame" x="52" y="219" width="310.5" height="22"/>
+                                <rect key="frame" x="32.333333333333343" y="219" width="310.33333333333326" height="22"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="19"/>
                                 <color key="textColor" red="1" green="0.26503622277568895" blue="0.5794554554333794" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOa-qO-lfV">
-                                <rect key="frame" x="146.5" y="306" width="121" height="48"/>
+                                <rect key="frame" x="127" y="306" width="121" height="48"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="배고프다">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="28"/>
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qh-fY-vBd">
-                                <rect key="frame" x="142" y="451" width="130" height="48"/>
+                                <rect key="frame" x="122.66666666666669" y="451" width="130" height="48"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="넘어가자!">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="28"/>
@@ -68,11 +68,11 @@
             <objects>
                 <viewController storyboardIdentifier="FirstViewController" id="1UP-Yd-Mbx" customClass="FirstViewController" customModule="Sopt29th_Seminar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X8n-f7-XsR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hIz-Z4-UOH">
-                                <rect key="frame" x="50" y="199" width="314" height="60"/>
+                                <rect key="frame" x="50" y="199" width="275" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="V7n-t0-hzy"/>
                                 </constraints>
@@ -80,7 +80,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2d4-Jy-owA">
-                                <rect key="frame" x="142" y="349" width="130" height="48"/>
+                                <rect key="frame" x="122.66666666666669" y="349" width="130" height="48"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="넘어가자!">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="28"/>
@@ -115,17 +115,17 @@
             <objects>
                 <viewController storyboardIdentifier="ResultViewController" id="Y1t-Nj-VmL" customClass="ResultViewController" customModule="Sopt29th_Seminar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lY4-3Z-wPd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결과" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqn-fU-7pZ">
-                                <rect key="frame" x="60" y="205" width="294" height="38.5"/>
+                                <rect key="frame" x="60" y="205" width="255" height="38.333333333333343"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="33"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqB-kT-NIc">
-                                <rect key="frame" x="142" y="343.5" width="130" height="48"/>
+                                <rect key="frame" x="122.66666666666669" y="343.33333333333331" width="130" height="48"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="돌아가자!">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="28"/>
@@ -154,16 +154,76 @@
             </objects>
             <point key="canvasLocation" x="2220" y="948"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="rNL-fI-v3Q">
+            <objects>
+                <viewController id="BUi-eh-aHB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5ez-ZA-xf8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SOPT_logo" translatesAutoresizingMaskIntoConstraints="NO" id="qRU-tK-5YB">
+                                <rect key="frame" x="28" y="223.66666666666666" width="319" height="400.66666666666674"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyw-xs-tdG">
+                                <rect key="frame" x="25.000000000000007" y="90" width="117.66666666666669" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Roz-uS-oIx">
+                                <rect key="frame" x="22" y="148.66666666666666" width="330" height="1"/>
+                                <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="iXd-ST-UnL"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azV-0h-JQu">
+                                <rect key="frame" x="23.999999999999993" y="159.66666666666666" width="111.33333333333331" height="28"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqE-D7-sZg">
+                                <rect key="frame" x="281" y="159.66666666666666" width="79" height="36"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="See All">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZvT-jI-dB7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qRU-tK-5YB" secondAttribute="trailing" constant="28" id="00v-Rx-MiC"/>
+                            <constraint firstAttribute="trailing" secondItem="Roz-uS-oIx" secondAttribute="trailing" constant="23" id="CHK-3v-3zz"/>
+                            <constraint firstItem="Oyw-xs-tdG" firstAttribute="top" secondItem="ZvT-jI-dB7" secondAttribute="top" constant="46" id="ElS-rK-bje"/>
+                            <constraint firstItem="Roz-uS-oIx" firstAttribute="leading" secondItem="5ez-ZA-xf8" secondAttribute="leading" constant="22" id="Hby-an-1RE"/>
+                            <constraint firstItem="Roz-uS-oIx" firstAttribute="top" secondItem="Oyw-xs-tdG" secondAttribute="bottom" constant="18" id="KTk-gb-px2"/>
+                            <constraint firstItem="xqE-D7-sZg" firstAttribute="top" secondItem="Roz-uS-oIx" secondAttribute="bottom" constant="10" id="LBV-um-QVQ"/>
+                            <constraint firstItem="azV-0h-JQu" firstAttribute="top" secondItem="Roz-uS-oIx" secondAttribute="bottom" constant="10" id="PIh-0v-rBB"/>
+                            <constraint firstItem="Oyw-xs-tdG" firstAttribute="leading" secondItem="5ez-ZA-xf8" secondAttribute="leading" constant="25" id="SmE-xp-YIc"/>
+                            <constraint firstItem="azV-0h-JQu" firstAttribute="leading" secondItem="5ez-ZA-xf8" secondAttribute="leading" constant="24" id="UD0-PS-x6R"/>
+                            <constraint firstItem="qRU-tK-5YB" firstAttribute="leading" secondItem="5ez-ZA-xf8" secondAttribute="leading" constant="28" id="Xhw-Vz-Zyf"/>
+                            <constraint firstAttribute="trailing" secondItem="xqE-D7-sZg" secondAttribute="trailing" constant="15" id="eUf-LN-IEP"/>
+                            <constraint firstItem="qRU-tK-5YB" firstAttribute="top" secondItem="xqE-D7-sZg" secondAttribute="bottom" constant="28" id="u9v-bN-u0G"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jwg-cX-FJK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3549" y="948"/>
+        </scene>
         <!--Second View Controller-->
         <scene sceneID="ibu-UT-KG6">
             <objects>
                 <viewController storyboardIdentifier="SecondViewController" id="DN0-Hf-5ta" customClass="SecondViewController" customModule="Sopt29th_Seminar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Ys-wP-EHJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpb-EJ-HqL">
-                                <rect key="frame" x="142" y="246" width="130" height="48"/>
+                                <rect key="frame" x="122.66666666666669" y="246" width="130" height="48"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="돌아가자!">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="28"/>
@@ -189,11 +249,10 @@
         <!--Navigation Controller-->
         <scene sceneID="aeR-GB-LJF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kwh-Jy-wM4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cmT-YI-emF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kex-kS-pVn">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -201,11 +260,13 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="F1a-Sr-XCb"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kwh-Jy-wM4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-23.188405797101453" y="81.696428571428569"/>
         </scene>
     </scenes>
     <resources>
+        <image name="SOPT_logo" width="319.33334350585938" height="400.33334350585938"/>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

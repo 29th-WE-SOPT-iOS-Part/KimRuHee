@@ -24,18 +24,18 @@ class LoginVC: UIViewController {
         $0.text = "Google"
     }
     
-    let loginLabel = UILabel().then {
+    private let loginLabel = UILabel().then {
         $0.font = .boldSystemFont(ofSize: 35)
         $0.textColor = .black
         $0.text = "로그인"
     }
     
-    let explainLabel = UILabel().then {
+    private let explainLabel = UILabel().then {
         $0.font = .boldSystemFont(ofSize: 16)
         $0.textColor = .lightGray
         $0.numberOfLines = 0
         $0.textAlignment = .center
-        $0.text = "YouTube도 이동하며 계속하세요. 앱 및 Safari에서도 Google 서비스에 로그인됩니다."
+        $0.text = Const.Text.Description
     }
     
     private lazy var fieldStackView = UIStackView().then {
@@ -43,24 +43,18 @@ class LoginVC: UIViewController {
         $0.alignment = .fill
         $0.distribution = .fillEqually
         $0.spacing = 20
-        $0.addArrangedSubview(nameTextField)
-        $0.addArrangedSubview(emailTextField)
-        $0.addArrangedSubview(pwTextField)
     }
     
-    let nameTextField = UITextField().then {
+    private let nameTextField = UITextField().then {
         $0.setTextField(placeholder: "이름을 입력해주세요", secure: false)
-        $0.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
     }
     
-    let emailTextField = UITextField().then {
+    private let emailTextField = UITextField().then {
         $0.setTextField(placeholder: "이메일 또는 휴대전화", secure: false)
-        $0.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
     }
     
-    let pwTextField = UITextField().then {
+    private let pwTextField = UITextField().then {
         $0.setTextField(placeholder: "비밀번호 입력", secure: true)
-        $0.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
     }
     
     let appleButton = ASAuthorizationAppleIDButton().then {
@@ -69,7 +63,7 @@ class LoginVC: UIViewController {
         $0.clipsToBounds = true
     }
     
-    let signupButton = UIButton().then {
+    private let signupButton = UIButton().then {
         $0.setTitle("계정만들기", for: .normal)
         $0.setTitleColor(.mainBlue, for: .normal)
         $0.setTitleColor(.white, for: .highlighted)
@@ -77,7 +71,7 @@ class LoginVC: UIViewController {
         $0.addTarget(self, action: #selector(touchupSignupButton(_:)), for: .touchUpInside)
     }
     
-    let signInButton = UIButton().then {
+    lazy var signInButton = UIButton().then {
         $0.isUserInteractionEnabled = false
         $0.setTitle("다음", for: .normal)
         $0.setTitleColor(.white, for: .normal)
@@ -92,6 +86,7 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         configUI()
         setupAutoLayout()
+        setupTextField()
         hideKeyboard()
     }
     
@@ -103,6 +98,8 @@ class LoginVC: UIViewController {
     func setupAutoLayout() {
         view.addSubviews([logoLabel, loginLabel, explainLabel,
                           fieldStackView, appleButton, signupButton, signInButton])
+                          fieldStackView, signupButton, signInButton])
+        fieldStackView.addArrangedSubviews([nameTextField, emailTextField, pwTextField])
         
         logoLabel.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(20)
@@ -146,6 +143,15 @@ class LoginVC: UIViewController {
             make.centerY.equalTo(signupButton.snp.centerY)
             make.width.equalTo(80)
             make.height.equalTo(50)
+        }
+    }
+    
+    func setupTextField() {
+        nameTextField.delegate = self
+        emailTextField.delegate = self
+        pwTextField.delegate = self
+        [nameTextField, emailTextField, pwTextField].forEach {
+            $0.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         }
     }
     
@@ -247,6 +253,18 @@ class LoginVC: UIViewController {
     }
 }
 
+// MARK: - UITextFieldDelegate
+extension LoginVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case nameTextField: emailTextField.becomeFirstResponder()
+        case emailTextField: pwTextField.becomeFirstResponder()
+        case pwTextField: pwTextField.resignFirstResponder()
+        default: break
+        }
+        return true
+    }
+}
 // MARK: - ASAuthorizationControllerDelegate
 @available(iOS 13.0, *)
 extension LoginVC: ASAuthorizationControllerDelegate {

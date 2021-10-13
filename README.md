@@ -9,9 +9,9 @@
 
 ### ❤️‍🔥 iOS 파트 커리큘럼 
 
-| 주차 | 내용 | 이슈 | 과제 | 리드미 |
-|:------:|:------|:------:|:------:|:------:|
-|`1주차`| iOS 컴포넌트 이해, Xcode 기본 사용법, View 화면 전환|#2|😊|[🥳](https://elastic-failing-242.notion.site/SOPT-1-620e04ad885048968aa3b60a81bd5b35)|
+| 주차 | 내용 | 이슈 | 과제 | 리드미 | 리팩토링 |
+|:------:|:------|:------:|:------:|:------:|:-:|
+|`1주차`| iOS 컴포넌트 이해, Xcode 기본 사용법, View 화면 전환|[#2](https://github.com/29th-WE-SOPT-iOS-Part/KimRuHee/issues/2)|😊|[🥳](https://elastic-failing-242.notion.site/1-346d8696de7d46bf9df414448ea67ff5)|[✨](https://elastic-failing-242.notion.site/1-4697482733f246c98b2b7711d2e71859)|
 |`2주차`| AutoLayout, StackView, TabBarController | | | |
 |`3주차`| ScrollView, TableView, CollectionView | | | |
 |`4주차`| Cocoapods & Networking, REST API | | | |
