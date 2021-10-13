@@ -18,6 +18,7 @@
 		5B324487270E2ED800CD52D6 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B324486270E2ED800CD52D6 /* SignUpVC.swift */; };
 		5B8CAD41271742130016FEAD /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CAD40271742130016FEAD /* UIStackView + Extension.swift */; };
 		5B8CAD44271749F50016FEAD /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CAD43271749F50016FEAD /* Constant.swift */; };
+		5B87992E2710D28C00148563 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B87992D2710D28C00148563 /* GoogleService-Info.plist */; };
 		5B8F56DF270F1FE100B8F943 /* CompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F56DE270F1FE100B8F943 /* CompleteVC.swift */; };
 		5B8F56E1270F26F300B8F943 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F56E0270F26F300B8F943 /* UIViewController + Extension.swift */; };
 		A1DB3182B180D8A44F60F25F /* Pods_Sopt29th_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1FA1544DF3043971FE0FA5 /* Pods_Sopt29th_Assignment.framework */; };
@@ -38,6 +39,9 @@
 		5B324486270E2ED800CD52D6 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		5B8CAD40271742130016FEAD /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		5B8CAD43271749F50016FEAD /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		5B87992D2710D28C00148563 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5B87992F2710D43A00148563 /* Sopt29th-AssignmentRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sopt29th-AssignmentRelease.entitlements"; sourceTree = "<group>"; };
+		5B8799302710D49200148563 /* Sopt29th-AssignmentDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sopt29th-AssignmentDebug.entitlements"; sourceTree = "<group>"; };
 		5B8F56DE270F1FE100B8F943 /* CompleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteVC.swift; sourceTree = "<group>"; };
 		5B8F56E0270F26F300B8F943 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		5F1FA1544DF3043971FE0FA5 /* Pods_Sopt29th_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sopt29th_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,9 +90,12 @@
 		5B2B461F270B6CC90074B585 /* Sopt29th-Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				5B8799302710D49200148563 /* Sopt29th-AssignmentDebug.entitlements */,
+				5B87992F2710D43A00148563 /* Sopt29th-AssignmentRelease.entitlements */,
 				5B2B4634270B6CDC0074B585 /* Source */,
 				5B2B4635270B6CE30074B585 /* Resource */,
 				5B2B462E270B6CCC0074B585 /* Info.plist */,
+				5B87992D2710D28C00148563 /* GoogleService-Info.plist */,
 			);
 			path = "Sopt29th-Assignment";
 			sourceTree = "<group>";
@@ -228,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B87992E2710D28C00148563 /* GoogleService-Info.plist in Resources */,
 				5B2B462D270B6CCC0074B585 /* LaunchScreen.storyboard in Resources */,
 				5B2B462A270B6CCC0074B585 /* Assets.xcassets in Resources */,
 			);
@@ -432,25 +440,27 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Sopt29th-Assignment/Sopt29th-AssignmentDebug.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5GQ6QL9S3X;
+				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sopt29th-Assignment/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ruheekim.Sopt29th-Assignment";
+				PRODUCT_BUNDLE_IDENTIFIER = ruheekim.SoptAssignment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -460,25 +470,27 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Sopt29th-Assignment/Sopt29th-AssignmentRelease.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5GQ6QL9S3X;
+				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sopt29th-Assignment/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ruheekim.Sopt29th-Assignment";
+				PRODUCT_BUNDLE_IDENTIFIER = ruheekim.SoptAssignment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

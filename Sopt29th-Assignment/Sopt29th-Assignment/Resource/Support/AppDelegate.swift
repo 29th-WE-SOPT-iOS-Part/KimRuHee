@@ -7,13 +7,22 @@
 
 import UIKit
 
+import Firebase
+import FirebaseAuth
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        FirebaseApp.configure()
+        
+        // Firebase가 iOS 키체인에 사용자 credential을 유지하고 애플리케이션 시작 시에 검색한다.
+        // 따라서, 이미 로그인했는지 확인하려면 아래 코드를 통해서 그에 따라 UI를 업데이트 할 수 있다.
+//        if let user = FirebaseAuth.Auth.auth().currentUser {
+//            print("로그인 되어 있음", user.uid, user.email ?? "-")
+//        }
         return true
     }
 

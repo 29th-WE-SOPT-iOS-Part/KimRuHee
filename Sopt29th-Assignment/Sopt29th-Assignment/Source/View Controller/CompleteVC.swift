@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Firebase
+import FirebaseAuth
 import SnapKit
 import Then
 
@@ -24,16 +26,25 @@ class CompleteVC: UIViewController {
         $0.font = .boldSystemFont(ofSize: 35)
         $0.textColor = .black
         $0.textAlignment = .center
-        $0.numberOfLines = 2
+        $0.numberOfLines = 0
     }
     
-    lazy var completeButton = UIButton().then {
+    private let completeButton = UIButton().then {
         $0.setTitle("확인", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.titleLabel?.font = .boldSystemFont(ofSize: 18)
         $0.backgroundColor = .mainBlue
         $0.layer.cornerRadius = 10
         $0.addTarget(self, action: #selector(touchupCompleteButton(_:)), for: .touchUpInside)
+    }
+    
+    private let logoutButton = UIButton().then {
+        $0.setTitle("로그아웃", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        $0.backgroundColor = .mainBlue
+        $0.layer.cornerRadius = 10
+        $0.addTarget(self, action: #selector(touchupLogoutButton(_:)), for: .touchUpInside)
     }
     
     // MARK: - Lifecycle
@@ -50,7 +61,7 @@ class CompleteVC: UIViewController {
     }
     
     func setupAutoLayout() {
-        view.addSubviews([logoLabel, welcomeLabel, completeButton])
+        view.addSubviews([logoLabel, welcomeLabel, completeButton, logoutButton])
         
         logoLabel.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(100)
@@ -69,6 +80,13 @@ class CompleteVC: UIViewController {
             make.width.equalTo(80)
             make.height.equalTo(50)
         }
+        
+        logoutButton.snp.makeConstraints { make in
+            make.top.equalTo(completeButton.snp.bottom).offset(20)
+            make.leading.trailing.equalToSuperview().inset(30)
+            make.width.equalTo(80)
+            make.height.equalTo(50)
+        }
     }
     
     func setupData() {
@@ -80,5 +98,14 @@ class CompleteVC: UIViewController {
     // MARK: - @objc
     @objc func touchupCompleteButton(_ sender: UIButton) {
         
+    }
+    
+    @objc func touchupLogoutButton(_ sender: UIButton) {
+        do { // 로그아웃
+            try FirebaseAuth.Auth.auth().signOut()
+            dismiss(animated: true, completion: nil)
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
 }
