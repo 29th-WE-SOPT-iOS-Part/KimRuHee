@@ -164,7 +164,7 @@ class SignUpVC: UIViewController {
         
         FirebaseAuth.Auth.auth().createUser(withEmail: email, password: pw) { [self] (result, error) in
             if error != nil { // error가 nil이 아니다 => error에 뭐가 있다? => error가 있다는 뜻
-                print("회원가입 실패")
+                print("회원가입 실패", error?.localizedDescription)
                 
             } else {
                 // 데이터 추가
