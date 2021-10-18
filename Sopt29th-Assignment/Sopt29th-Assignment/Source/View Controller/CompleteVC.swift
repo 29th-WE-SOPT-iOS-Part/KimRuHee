@@ -93,11 +93,13 @@ class CompleteVC: UIViewController {
     
     // MARK: - @objc
     @objc func touchupCompleteButton(_ sender: UIButton) {
-        
+        let mainVC = MainTabVC()
+        mainVC.modalPresentationStyle = .fullScreen
+        present(mainVC, animated: true, completion: nil)
     }
     
     @objc func touchupAnotherAccountButton(_ sender: UIButton) {
-        do { // 로그아웃
+        do {
             try FirebaseAuth.Auth.auth().signOut()
             guard let pvc = presentingViewController as? UINavigationController else { return }
             self.dismiss(animated: true) {
