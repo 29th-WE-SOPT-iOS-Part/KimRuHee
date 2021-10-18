@@ -15,5 +15,15 @@ struct Const {
     struct Image {
         static let check = UIImage(systemName: "checkmark.square.fill")
         static let uncheck = UIImage(systemName: "square")
+        static let logo = UIImage(named: "logo")
+        static let homeFill = UIImage(named: "homeIconFill")
+        static let home = UIImage(named: "homeIcon")
+        static let shortsFill = UIImage(named: "shortsIconFill")
+        static let shorts = UIImage(named: "shortsIcon")
+        static let plueCircle = UIImage(named: "plueCircleIcon")
+        static let subscribeFill = UIImage(named: "subscriptionsIconFill")
+        static let subscribe = UIImage(named: "subscriptionsIcon")
+        static let libraryFill = UIImage(named: "LibraryIconFill")
+        static let library = UIImage(named: "LibraryIcon")
     }
 }
