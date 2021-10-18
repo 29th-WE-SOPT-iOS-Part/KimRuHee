@@ -103,7 +103,10 @@ class CompleteVC: UIViewController {
     @objc func touchupLogoutButton(_ sender: UIButton) {
         do { // 로그아웃
             try FirebaseAuth.Auth.auth().signOut()
-            dismiss(animated: true, completion: nil)
+            guard let pvc = presentingViewController as? UINavigationController else { return }
+            self.dismiss(animated: true) {
+                pvc.popToRootViewController(animated: true)
+            }
         } catch let error {
             print(error.localizedDescription)
         }

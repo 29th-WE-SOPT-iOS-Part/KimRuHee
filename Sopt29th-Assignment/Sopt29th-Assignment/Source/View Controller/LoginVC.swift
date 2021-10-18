@@ -264,6 +264,7 @@ extension LoginVC: UITextFieldDelegate {
         return true
     }
 }
+
 // MARK: - ASAuthorizationControllerDelegate
 @available(iOS 13.0, *)
 extension LoginVC: ASAuthorizationControllerDelegate {
