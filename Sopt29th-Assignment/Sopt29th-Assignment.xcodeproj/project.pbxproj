@@ -16,9 +16,10 @@
 		5B324483270E183700CD52D6 /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B324482270E183700CD52D6 /* UITextField + Extension.swift */; };
 		5B324485270E1EDC00CD52D6 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B324484270E1EDC00CD52D6 /* UIColor + Extension.swift */; };
 		5B324487270E2ED800CD52D6 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B324486270E2ED800CD52D6 /* SignUpVC.swift */; };
+		5B85637D271DCC9B002B7F79 /* UILabel + Extensioin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85637C271DCC9B002B7F79 /* UILabel + Extensioin.swift */; };
+		5B87992E2710D28C00148563 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B87992D2710D28C00148563 /* GoogleService-Info.plist */; };
 		5B8CAD41271742130016FEAD /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CAD40271742130016FEAD /* UIStackView + Extension.swift */; };
 		5B8CAD44271749F50016FEAD /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CAD43271749F50016FEAD /* Constant.swift */; };
-		5B87992E2710D28C00148563 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B87992D2710D28C00148563 /* GoogleService-Info.plist */; };
 		5B8F56DF270F1FE100B8F943 /* CompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F56DE270F1FE100B8F943 /* CompleteVC.swift */; };
 		5B8F56E1270F26F300B8F943 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F56E0270F26F300B8F943 /* UIViewController + Extension.swift */; };
 		A1DB3182B180D8A44F60F25F /* Pods_Sopt29th_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1FA1544DF3043971FE0FA5 /* Pods_Sopt29th_Assignment.framework */; };
@@ -37,11 +38,12 @@
 		5B324482270E183700CD52D6 /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
 		5B324484270E1EDC00CD52D6 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		5B324486270E2ED800CD52D6 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
-		5B8CAD40271742130016FEAD /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
-		5B8CAD43271749F50016FEAD /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		5B85637C271DCC9B002B7F79 /* UILabel + Extensioin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensioin.swift"; sourceTree = "<group>"; };
 		5B87992D2710D28C00148563 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B87992F2710D43A00148563 /* Sopt29th-AssignmentRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sopt29th-AssignmentRelease.entitlements"; sourceTree = "<group>"; };
 		5B8799302710D49200148563 /* Sopt29th-AssignmentDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sopt29th-AssignmentDebug.entitlements"; sourceTree = "<group>"; };
+		5B8CAD40271742130016FEAD /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
+		5B8CAD43271749F50016FEAD /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		5B8F56DE270F1FE100B8F943 /* CompleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteVC.swift; sourceTree = "<group>"; };
 		5B8F56E0270F26F300B8F943 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		5F1FA1544DF3043971FE0FA5 /* Pods_Sopt29th_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sopt29th_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 				5B324482270E183700CD52D6 /* UITextField + Extension.swift */,
 				5B324484270E1EDC00CD52D6 /* UIColor + Extension.swift */,
 				5B8F56E0270F26F300B8F943 /* UIViewController + Extension.swift */,
+				5B85637C271DCC9B002B7F79 /* UILabel + Extensioin.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				5B8F56E1270F26F300B8F943 /* UIViewController + Extension.swift in Sources */,
 				5B8CAD44271749F50016FEAD /* Constant.swift in Sources */,
 				5B2B463B270B744E0074B585 /* UIView + Extension.swift in Sources */,
+				5B85637D271DCC9B002B7F79 /* UILabel + Extensioin.swift in Sources */,
 				5B8CAD41271742130016FEAD /* UIStackView + Extension.swift in Sources */,
 				5B324483270E183700CD52D6 /* UITextField + Extension.swift in Sources */,
 				5B2B4625270B6CC90074B585 /* LoginVC.swift in Sources */,
