@@ -16,11 +16,11 @@ class LibraryVC: UIViewController {
     }
     
     // MARK: - Custom Method
-    func configUI() {
+    private func configUI() {
         view.backgroundColor = .purple
     }
     
-    func setupAutoLayout() {
+    private func setupAutoLayout() {
         
     }
 }

@@ -23,6 +23,7 @@
 		5B856386271DD7B2002B7F79 /* SubscribeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B856385271DD7B2002B7F79 /* SubscribeVC.swift */; };
 		5B856388271DD7BD002B7F79 /* LibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B856387271DD7BD002B7F79 /* LibraryVC.swift */; };
 		5B85638A271DD7C8002B7F79 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B856389271DD7C8002B7F79 /* AddVC.swift */; };
+		5B85638D271DE864002B7F79 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85638C271DE864002B7F79 /* CustomButton.swift */; };
 		5B87992E2710D28C00148563 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B87992D2710D28C00148563 /* GoogleService-Info.plist */; };
 		5B8CAD41271742130016FEAD /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CAD40271742130016FEAD /* UIStackView + Extension.swift */; };
 		5B8CAD44271749F50016FEAD /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CAD43271749F50016FEAD /* Constant.swift */; };
@@ -51,6 +52,7 @@
 		5B856385271DD7B2002B7F79 /* SubscribeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeVC.swift; sourceTree = "<group>"; };
 		5B856387271DD7BD002B7F79 /* LibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryVC.swift; sourceTree = "<group>"; };
 		5B856389271DD7C8002B7F79 /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
+		5B85638C271DE864002B7F79 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		5B87992D2710D28C00148563 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B87992F2710D43A00148563 /* Sopt29th-AssignmentRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sopt29th-AssignmentRelease.entitlements"; sourceTree = "<group>"; };
 		5B8799302710D49200148563 /* Sopt29th-AssignmentDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sopt29th-AssignmentDebug.entitlements"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		5B2B4634270B6CDC0074B585 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5B85638B271DE840002B7F79 /* Component */,
 				5B2B4638270B6D490074B585 /* View Controller */,
 			);
 			path = Source;
@@ -157,8 +160,7 @@
 				5B2B4624270B6CC90074B585 /* LoginVC.swift */,
 				5B324486270E2ED800CD52D6 /* SignUpVC.swift */,
 				5B8F56DE270F1FE100B8F943 /* CompleteVC.swift */,
-				5B85637E271DD5A0002B7F79 /* MainTabVC.swift */,
-				5B856380271DD75B002B7F79 /* TabVC */,
+				5B856380271DD75B002B7F79 /* MainVC */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -176,16 +178,25 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		5B856380271DD75B002B7F79 /* TabVC */ = {
+		5B856380271DD75B002B7F79 /* MainVC */ = {
 			isa = PBXGroup;
 			children = (
+				5B85637E271DD5A0002B7F79 /* MainTabVC.swift */,
 				5B856381271DD779002B7F79 /* HomeVC.swift */,
 				5B856383271DD786002B7F79 /* ShortsVC.swift */,
 				5B856389271DD7C8002B7F79 /* AddVC.swift */,
 				5B856385271DD7B2002B7F79 /* SubscribeVC.swift */,
 				5B856387271DD7BD002B7F79 /* LibraryVC.swift */,
 			);
-			path = TabVC;
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		5B85638B271DE840002B7F79 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				5B85638C271DE864002B7F79 /* CustomButton.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		5B8CAD42271749E40016FEAD /* Constant */ = {
@@ -320,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B85638A271DD7C8002B7F79 /* AddVC.swift in Sources */,
+				5B85638D271DE864002B7F79 /* CustomButton.swift in Sources */,
 				5B856388271DD7BD002B7F79 /* LibraryVC.swift in Sources */,
 				5B324487270E2ED800CD52D6 /* SignUpVC.swift in Sources */,
 				5B856384271DD786002B7F79 /* ShortsVC.swift in Sources */,

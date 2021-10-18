@@ -16,11 +16,11 @@ class HomeVC: UIViewController {
     }
     
     // MARK: - Custom Method
-    func configUI() {
+    private func configUI() {
         view.backgroundColor = .white
     }
     
-    func setupAutoLayout() {
+    private func setupAutoLayout() {
         
     }
 }

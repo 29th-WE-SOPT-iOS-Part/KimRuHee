@@ -19,11 +19,11 @@ class MainTabVC: UITabBarController {
     }
     
     //MARK: - Custom Method
-    func configUI() {
+    private func configUI() {
         view.backgroundColor = .white
     }
     
-    func configVC() {
+    private func configVC() {
         let home = setNavigationController(title: "홈",
                                            unselectedImage: Const.Image.home!,
                                            selectedImage: Const.Image.homeFill!,
@@ -54,7 +54,7 @@ class MainTabVC: UITabBarController {
         tabBar.backgroundColor = .white
     }
     
-    func setNavigationController(title: String,
+    private func setNavigationController(title: String,
                                  unselectedImage: UIImage,
                                  selectedImage: UIImage,
                                  rootViewController: UIViewController) -> UINavigationController {

@@ -44,7 +44,7 @@ class SignUpVC: UIViewController {
         $0.setTextField(placeholder: "비밀번호 입력", secure: true)
     }
         
-    lazy var showButton = UIButton().then {
+    private lazy var showButton = UIButton().then {
         var configShow = UIButton.Configuration.plain()
         configShow.title = "비밀번호 표시"
         configShow.baseForegroundColor = .black
@@ -60,13 +60,8 @@ class SignUpVC: UIViewController {
         }
     }
     
-    private let signupButton = UIButton().then {
-        $0.isUserInteractionEnabled = false
+    private let signupButton = CustomButton().then {
         $0.setTitle("다음", for: .normal)
-        $0.setTitleColor(.white, for: .normal)
-        $0.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
-        $0.backgroundColor = .lightGray
-        $0.layer.cornerRadius = 4
         $0.addTarget(self, action: #selector(touchupSignupButton(_:)), for: .touchUpInside)
     }
     
@@ -80,11 +75,11 @@ class SignUpVC: UIViewController {
     }
     
     // MARK: - Custom Method
-    func configUI() {
+    private func configUI() {
         view.backgroundColor = .white
     }
     
-    func setupAutoLayout() {
+    private func setupAutoLayout() {
         view.addSubviews([logoImageView, signupLabel,
                           fieldStackView, showButton, signupButton])
         fieldStackView.addArrangedSubviews([nameTextField, emailTextField, pwTextField])
@@ -121,7 +116,7 @@ class SignUpVC: UIViewController {
         }
     }
     
-    func setupTextField() {
+    private func setupTextField() {
         nameTextField.delegate = self
         emailTextField.delegate = self
         pwTextField.delegate = self
@@ -142,7 +137,7 @@ class SignUpVC: UIViewController {
             email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ||
             pw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             signupButton.isUserInteractionEnabled = false
-            signupButton.backgroundColor = .lightGray
+            signupButton.backgroundColor = .lineGray
         } else {
             signupButton.isUserInteractionEnabled = true
             signupButton.backgroundColor = .mainBlue

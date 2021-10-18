@@ -27,7 +27,7 @@ extension UITextField {
         self.backgroundColor = .white
         self.borderStyle = .line
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.textFieldLine.cgColor
+        self.layer.borderColor = UIColor.lineGray.cgColor
         self.layer.cornerRadius = 8
         self.clipsToBounds = true
         self.addLeftPadding()

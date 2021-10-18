@@ -16,11 +16,11 @@ class ShortsVC: UIViewController {
     }
     
     // MARK: - Custom Method
-    func configUI() {
+    private func configUI() {
         view.backgroundColor = .orange
     }
     
-    func setupAutoLayout() {
+    private func setupAutoLayout() {
         
     }
 }

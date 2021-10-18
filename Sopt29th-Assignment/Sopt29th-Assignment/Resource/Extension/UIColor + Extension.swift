@@ -12,7 +12,7 @@ extension UIColor {
       return UIColor(red: 66/255.0, green: 133/255.0, blue: 244/255.0, alpha: 1.0)
     }
     
-    @nonobjc class var textFieldLine: UIColor {
+    @nonobjc class var lineGray: UIColor {
       return UIColor(white: 234.0 / 255.0, alpha: 1.0)
     }
 }

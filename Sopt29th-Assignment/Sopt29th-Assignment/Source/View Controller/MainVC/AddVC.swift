@@ -16,11 +16,11 @@ class AddVC: UIViewController {
     }
     
     // MARK: - Custom Method
-    func configUI() {
+    private func configUI() {
         view.backgroundColor = .yellow
     }
     
-    func setupAutoLayout() {
+    private func setupAutoLayout() {
         
     }
 }

@@ -27,12 +27,10 @@ class CompleteVC: UIViewController {
         $0.numberOfLines = 0
     }
     
-    private let completeButton = UIButton().then {
+    private let completeButton = CustomButton().then {
         $0.setTitle("확인", for: .normal)
-        $0.setTitleColor(.white, for: .normal)
-        $0.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
         $0.backgroundColor = .mainBlue
-        $0.layer.cornerRadius = 4
+        $0.isUserInteractionEnabled = true
         $0.addTarget(self, action: #selector(touchupCompleteButton(_:)), for: .touchUpInside)
     }
     
@@ -53,11 +51,11 @@ class CompleteVC: UIViewController {
     }
     
     // MARK: - Custom Method
-    func configUI() {
+    private func configUI() {
         view.backgroundColor = .white
     }
     
-    func setupAutoLayout() {
+    private func setupAutoLayout() {
         view.addSubviews([logoImageView, welcomeLabel, completeButton, anotherAccountButton])
         
         logoImageView.snp.makeConstraints { make in

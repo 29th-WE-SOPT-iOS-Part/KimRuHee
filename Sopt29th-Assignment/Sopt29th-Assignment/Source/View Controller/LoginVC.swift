@@ -68,13 +68,8 @@ class LoginVC: UIViewController {
         $0.addTarget(self, action: #selector(touchupSignupButton(_:)), for: .touchUpInside)
     }
     
-    lazy var signInButton = UIButton().then {
-        $0.isUserInteractionEnabled = false
+    private lazy var signInButton = CustomButton().then {
         $0.setTitle("다음", for: .normal)
-        $0.setTitleColor(.white, for: .normal)
-        $0.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
-        $0.backgroundColor = signupButton.isHighlighted == true ? .mainBlue : .lightGray
-        $0.layer.cornerRadius = 4
         $0.addTarget(self, action: #selector(touchupSignInButton(_:)), for: .touchUpInside)
     }
     
@@ -88,11 +83,11 @@ class LoginVC: UIViewController {
     }
     
     // MARK: - Custom Method
-    func configUI() {
+    private func configUI() {
         view.backgroundColor = .white
     }
     
-    func setupAutoLayout() {
+    private func setupAutoLayout() {
         view.addSubviews([logoImageView, loginLabel, explainLabel,
                           fieldStackView, appleButton, signupButton, signInButton])
         fieldStackView.addArrangedSubviews([nameTextField, emailTextField, pwTextField])
@@ -142,7 +137,7 @@ class LoginVC: UIViewController {
         }
     }
     
-    func setupTextField() {
+    private func setupTextField() {
         nameTextField.delegate = self
         emailTextField.delegate = self
         pwTextField.delegate = self
@@ -209,7 +204,7 @@ class LoginVC: UIViewController {
             email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ||
             pw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             signInButton.isUserInteractionEnabled = false
-            signInButton.backgroundColor = .lightGray
+            signInButton.backgroundColor = .lineGray
             
         } else {
             signInButton.isUserInteractionEnabled = true
