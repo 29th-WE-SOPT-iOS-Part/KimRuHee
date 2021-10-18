@@ -15,15 +15,13 @@ import Then
 
 class SignUpVC: UIViewController {
     // MARK: - Properties
-    private let logoLabel = UILabel().then {
-        $0.font = .boldSystemFont(ofSize: 50)
-        $0.textColor = .mainBlue
-        $0.text = "Google"
+    private let logoImageView = UIImageView().then {
+        $0.image = Const.Image.logo
+        $0.contentMode = .scaleAspectFit
     }
     
     private let signupLabel = UILabel().then {
-        $0.font = .boldSystemFont(ofSize: 35)
-        $0.textColor = .black
+        $0.font = .systemFont(ofSize: 24, weight: .semibold)
         $0.text = "회원가입"
     }
     
@@ -31,7 +29,7 @@ class SignUpVC: UIViewController {
         $0.axis = .vertical
         $0.alignment = .fill
         $0.distribution = .fillEqually
-        $0.spacing = 20
+        $0.spacing = 17
     }
     
     private let nameTextField = UITextField().then {
@@ -66,9 +64,9 @@ class SignUpVC: UIViewController {
         $0.isUserInteractionEnabled = false
         $0.setTitle("다음", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        $0.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
         $0.backgroundColor = .lightGray
-        $0.layer.cornerRadius = 10
+        $0.layer.cornerRadius = 4
         $0.addTarget(self, action: #selector(touchupSignupButton(_:)), for: .touchUpInside)
     }
     
@@ -87,40 +85,39 @@ class SignUpVC: UIViewController {
     }
     
     func setupAutoLayout() {
-        view.addSubviews([logoLabel, signupLabel, fieldStackView,
-                          showButton, signupButton])
+        view.addSubviews([logoImageView, signupLabel,
+                          fieldStackView, showButton, signupButton])
         fieldStackView.addArrangedSubviews([nameTextField, emailTextField, pwTextField])
         
-        logoLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(20)
+        logoImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(110)
             make.centerX.equalToSuperview()
         }
         
         signupLabel.snp.makeConstraints { make in
-            make.top.equalTo(logoLabel.snp.bottom).offset(15)
+            make.top.equalTo(logoImageView.snp.bottom).offset(23)
             make.centerX.equalToSuperview()
         }
         
         nameTextField.snp.makeConstraints { make in
-            make.height.equalTo(60)
+            make.height.equalTo(48)
         }
         
         fieldStackView.snp.makeConstraints { make in
-            make.top.equalTo(signupLabel.snp.bottom).offset(80)
-            make.leading.trailing.equalToSuperview().inset(30)
+            make.top.equalTo(signupLabel.snp.bottom).offset(128)
+            make.leading.trailing.equalToSuperview().inset(22)
             make.centerX.equalToSuperview()
         }
         
         showButton.snp.makeConstraints { make in
-            make.top.equalTo(fieldStackView.snp.bottom).offset(10)
-            make.leading.equalToSuperview().inset(20)
+            make.top.equalTo(fieldStackView.snp.bottom).offset(17)
+            make.leading.equalToSuperview().inset(11)
         }
         
         signupButton.snp.makeConstraints { make in
-            make.top.equalTo(fieldStackView.snp.bottom).offset(80)
-            make.leading.trailing.equalToSuperview().inset(30)
-            make.width.equalTo(80)
-            make.height.equalTo(50)
+            make.top.equalTo(fieldStackView.snp.bottom).offset(110)
+            make.leading.trailing.equalToSuperview().inset(22)
+            make.height.equalTo(42)
         }
     }
     

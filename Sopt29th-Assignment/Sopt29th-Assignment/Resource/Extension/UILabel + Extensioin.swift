@@ -30,4 +30,14 @@ extension UILabel {
             }
         }
     }
+    
+    func addColor(font: UIFont, range: String) {
+        if let labelText = text, labelText.count > 0 {
+            let attributedStr = NSMutableAttributedString(string: labelText)
+            attributedStr.addAttribute(.font,
+                                       value: font,
+                                       range: (labelText as NSString).range(of: range))
+            attributedText = attributedStr
+        }
+    }
 }

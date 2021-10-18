@@ -118,7 +118,7 @@ class LoginVC: UIViewController {
         }
         
         fieldStackView.snp.makeConstraints { make in
-            make.top.equalTo(explainLabel.snp.bottom).offset(68)
+            make.top.equalTo(loginLabel.snp.bottom).offset(128)
             make.leading.trailing.equalToSuperview().inset(22)
             make.centerX.equalToSuperview()
         }
@@ -130,13 +130,13 @@ class LoginVC: UIViewController {
         }
         
         signupButton.snp.makeConstraints { make in
-            make.top.equalTo(fieldStackView.snp.bottom).offset(110)
             make.leading.equalToSuperview().inset(22)
+            make.centerY.equalTo(signInButton.snp.centerY)
         }
         
         signInButton.snp.makeConstraints { make in
+            make.top.equalTo(fieldStackView.snp.bottom).offset(110)
             make.trailing.equalToSuperview().inset(22)
-            make.centerY.equalTo(signupButton.snp.centerY)
             make.width.equalTo(74)
             make.height.equalTo(42)
         }
