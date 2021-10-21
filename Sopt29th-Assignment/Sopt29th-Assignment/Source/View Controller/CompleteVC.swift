@@ -53,6 +53,7 @@ class CompleteVC: UIViewController {
     // MARK: - Custom Method
     private func configUI() {
         view.backgroundColor = .white
+        navigationController?.navigationBar.isHidden = true
     }
     
     private func setupAutoLayout() {

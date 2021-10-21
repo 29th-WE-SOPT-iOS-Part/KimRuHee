@@ -44,21 +44,21 @@ class SignUpVC: UIViewController {
         $0.setTextField(placeholder: "비밀번호 입력", secure: true)
     }
         
-    private lazy var showButton = UIButton().then {
-        var configShow = UIButton.Configuration.plain()
-        configShow.title = "비밀번호 표시"
-        configShow.baseForegroundColor = .black
-        configShow.baseBackgroundColor = .clear
-        configShow.imagePlacement = .leading
-        configShow.imagePadding = 10
-        $0.configuration = configShow
-        $0.addTarget(self, action: #selector(touchupShowButton(_:)), for: .touchUpInside)
-        $0.configurationUpdateHandler = { btn in
-            var config = btn.configuration
-            config?.image = btn.isSelected ? Const.Image.check : Const.Image.uncheck
-            btn.configuration = config
-        }
-    }
+//    private lazy var showButton = UIButton().then {
+//        var configShow = UIButton.Configuration.plain()
+//        configShow.title = "비밀번호 표시"
+//        configShow.baseForegroundColor = .black
+//        configShow.baseBackgroundColor = .clear
+//        configShow.imagePlacement = .leading
+//        configShow.imagePadding = 10
+//        $0.configuration = configShow
+//        $0.addTarget(self, action: #selector(touchupShowButton(_:)), for: .touchUpInside)
+//        $0.configurationUpdateHandler = { btn in
+//            var config = btn.configuration
+//            config?.image = btn.isSelected ? Const.Image.check : Const.Image.uncheck
+//            btn.configuration = config
+//        }
+//    }
     
     private let signupButton = CustomButton().then {
         $0.setTitle("다음", for: .normal)
@@ -77,11 +77,12 @@ class SignUpVC: UIViewController {
     // MARK: - Custom Method
     private func configUI() {
         view.backgroundColor = .white
+        navigationController?.navigationBar.isHidden = true
     }
     
     private func setupAutoLayout() {
         view.addSubviews([logoImageView, signupLabel,
-                          fieldStackView, showButton, signupButton])
+                          fieldStackView, signupButton])
         fieldStackView.addArrangedSubviews([nameTextField, emailTextField, pwTextField])
         
         logoImageView.snp.makeConstraints { make in
@@ -103,11 +104,11 @@ class SignUpVC: UIViewController {
             make.leading.trailing.equalToSuperview().inset(22)
             make.centerX.equalToSuperview()
         }
-        
-        showButton.snp.makeConstraints { make in
-            make.top.equalTo(fieldStackView.snp.bottom).offset(17)
-            make.leading.equalToSuperview().inset(11)
-        }
+//
+//        showButton.snp.makeConstraints { make in
+//            make.top.equalTo(fieldStackView.snp.bottom).offset(17)
+//            make.leading.equalToSuperview().inset(11)
+//        }
         
         signupButton.snp.makeConstraints { make in
             make.top.equalTo(fieldStackView.snp.bottom).offset(110)
