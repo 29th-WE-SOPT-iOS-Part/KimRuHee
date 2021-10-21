@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("로그인 되어 있음", user.uid, user.email ?? "-")
         }
         
+        // 등록 토큰 받기 위해서 메시지 대리자 접근하기
+        Messaging.messaging().delegate = self
+        
         if #available(iOS 10.0, *) {
           // For iOS 10 display notification (sent via APNS)
           UNUserNotificationCenter.current().delegate = self
@@ -59,6 +62,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+}
+
+// MARK: - MessagingDelegate
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        // 현재 등록 토큰 접근하기
+        Messaging.messaging().token { token, error in
+          if let error = error {
+            print("Error fetching FCM registration token: \(error)")
+          } else if let token = token {
+            print("FCM registration token: \(token)")
+          }
+        }
+        
+        // 토큰 갱신 모니터링
+        print("Firebase registration token: \(String(describing: fcmToken))")
+
+          let dataDict: [String: String] = ["token": fcmToken ?? ""]
+          NotificationCenter.default.post(
+            name: Notification.Name("FCMToken"),
+            object: nil,
+            userInfo: dataDict
+          )
     }
 }
 
