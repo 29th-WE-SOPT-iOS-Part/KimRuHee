@@ -16,6 +16,8 @@ target 'Sopt29th-Assignment' do
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Messaging'
+
 
 
 end
