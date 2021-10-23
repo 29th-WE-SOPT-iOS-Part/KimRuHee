@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B2796DD2723D3E700999641 /* TableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2796DC2723D3E700999641 /* TableView.storyboard */; };
+		5B2796DF2723D40500999641 /* ThirdSeminarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2796DE2723D40500999641 /* ThirdSeminarVC.swift */; };
+		5B2796E12723DA7700999641 /* DelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2796E02723DA7700999641 /* DelegateViewController.swift */; };
+		5B2796E32723DF3A00999641 /* PartDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2796E22723DF3A00999641 /* PartDataModel.swift */; };
+		5B2796E62723E83D00999641 /* Practice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2796E52723E83D00999641 /* Practice.storyboard */; };
+		5B2796EA2723E8D200999641 /* RankingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2796E92723E8D200999641 /* RankingVC.swift */; };
+		5B2796F02723E9C200999641 /* RankTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2796EE2723E9C200999641 /* RankTVC.swift */; };
+		5B2796F12723E9C200999641 /* RankTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B2796EF2723E9C200999641 /* RankTVC.xib */; };
+		5B2796F32723EDD300999641 /* AppContentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2796F22723EDD300999641 /* AppContentDataModel.swift */; };
+		5B2796F82723FB2100999641 /* RankCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2796F72723FB2100999641 /* RankCVC.swift */; };
 		5B2B460E2708408A0074B585 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B460D2708408A0074B585 /* FirstViewController.swift */; };
 		5B2B4610270840930074B585 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B460F270840930074B585 /* ResultViewController.swift */; };
 		5B4F029E27082ACD00C04D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4F029D27082ACD00C04D75 /* AppDelegate.swift */; };
@@ -24,8 +34,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5B2B460D2708408A0074B585 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = "Sopt29th-Seminar/Source/View Controller/FirstViewController.swift"; sourceTree = SOURCE_ROOT; };
-		5B2B460F270840930074B585 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultViewController.swift; path = "Sopt29th-Seminar/Source/View Controller/ResultViewController.swift"; sourceTree = SOURCE_ROOT; };
+		5B2796DC2723D3E700999641 /* TableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableView.storyboard; sourceTree = "<group>"; };
+		5B2796DE2723D40500999641 /* ThirdSeminarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdSeminarVC.swift; sourceTree = "<group>"; };
+		5B2796E02723DA7700999641 /* DelegateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateViewController.swift; sourceTree = "<group>"; };
+		5B2796E22723DF3A00999641 /* PartDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartDataModel.swift; sourceTree = "<group>"; };
+		5B2796E52723E83D00999641 /* Practice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Practice.storyboard; sourceTree = "<group>"; };
+		5B2796E92723E8D200999641 /* RankingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingVC.swift; sourceTree = "<group>"; };
+		5B2796EE2723E9C200999641 /* RankTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTVC.swift; sourceTree = "<group>"; };
+		5B2796EF2723E9C200999641 /* RankTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankTVC.xib; sourceTree = "<group>"; };
+		5B2796F22723EDD300999641 /* AppContentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentDataModel.swift; sourceTree = "<group>"; };
+		5B2796F72723FB2100999641 /* RankCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankCVC.swift; sourceTree = "<group>"; };
+		5B2B460D2708408A0074B585 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = "Sopt29th-Seminar/Source/View Controller/FirstSeminar/FirstViewController.swift"; sourceTree = SOURCE_ROOT; };
+		5B2B460F270840930074B585 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultViewController.swift; path = "Sopt29th-Seminar/Source/View Controller/FirstSeminar/ResultViewController.swift"; sourceTree = SOURCE_ROOT; };
 		5B4F029A27082ACD00C04D75 /* Sopt29th-Seminar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sopt29th-Seminar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B4F029D27082ACD00C04D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B4F029F27082ACD00C04D75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,11 +73,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B2796E42723DF4500999641 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B2796E22723DF3A00999641 /* PartDataModel.swift */,
+				5B2796F22723EDD300999641 /* AppContentDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5B2796EB2723E98200999641 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5B2796EE2723E9C200999641 /* RankTVC.swift */,
+				5B2796EF2723E9C200999641 /* RankTVC.xib */,
+				5B2796F72723FB2100999641 /* RankCVC.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5B2796F42723EDDB00999641 /* ThirdSeminar */ = {
+			isa = PBXGroup;
+			children = (
+				5B2796DE2723D40500999641 /* ThirdSeminarVC.swift */,
+				5B2796E02723DA7700999641 /* DelegateViewController.swift */,
+				5B2796E92723E8D200999641 /* RankingVC.swift */,
+			);
+			path = ThirdSeminar;
+			sourceTree = "<group>";
+		};
+		5B2796F52723EDE900999641 /* SecondSeminar */ = {
+			isa = PBXGroup;
+			children = (
+				5B8799352711841D00148563 /* CustomTabBarController.swift */,
+				5B8799372711842700148563 /* OrangeVC.swift */,
+				5B8799392711844900148563 /* PurpleVC.swift */,
+			);
+			path = SecondSeminar;
+			sourceTree = "<group>";
+		};
+		5B2796F62723EDFC00999641 /* FirstSeminar */ = {
+			isa = PBXGroup;
+			children = (
+				5B4F02A127082ACD00C04D75 /* ViewController.swift */,
+				5B4F02B1270837EA00C04D75 /* SecondViewController.swift */,
+				5B2B460D2708408A0074B585 /* FirstViewController.swift */,
+				5B2B460F270840930074B585 /* ResultViewController.swift */,
+			);
+			path = FirstSeminar;
+			sourceTree = "<group>";
+		};
 		5B2B4611270840B30074B585 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				5B2B4613270840C20074B585 /* Storyboard */,
+				5B2796E42723DF4500999641 /* Model */,
 				5B4F02B327083D6D00C04D75 /* View Controller */,
+				5B2796EB2723E98200999641 /* Cell */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -65,6 +136,7 @@
 		5B2B4612270840B70074B585 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				5B2B4613270840C20074B585 /* Storyboard */,
 				5B4F02B827083DB200C04D75 /* Support */,
 			);
 			path = Resource;
@@ -77,6 +149,8 @@
 				5B4F02A827082AD200C04D75 /* LaunchScreen.storyboard */,
 				5B8799312711600600148563 /* AutoLayout.storyboard */,
 				5B87993327117C5400148563 /* Tabbar.storyboard */,
+				5B2796DC2723D3E700999641 /* TableView.storyboard */,
+				5B2796E52723E83D00999641 /* Practice.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -111,13 +185,9 @@
 		5B4F02B327083D6D00C04D75 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5B4F02A127082ACD00C04D75 /* ViewController.swift */,
-				5B4F02B1270837EA00C04D75 /* SecondViewController.swift */,
-				5B2B460D2708408A0074B585 /* FirstViewController.swift */,
-				5B2B460F270840930074B585 /* ResultViewController.swift */,
-				5B8799352711841D00148563 /* CustomTabBarController.swift */,
-				5B8799372711842700148563 /* OrangeVC.swift */,
-				5B8799392711844900148563 /* PurpleVC.swift */,
+				5B2796F62723EDFC00999641 /* FirstSeminar */,
+				5B2796F52723EDE900999641 /* SecondSeminar */,
+				5B2796F42723EDDB00999641 /* ThirdSeminar */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -189,9 +259,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B2796DD2723D3E700999641 /* TableView.storyboard in Resources */,
 				5B87993427117C5400148563 /* Tabbar.storyboard in Resources */,
+				5B2796E62723E83D00999641 /* Practice.storyboard in Resources */,
 				5B4F02AA27082AD200C04D75 /* LaunchScreen.storyboard in Resources */,
 				5B4F02A727082AD200C04D75 /* Assets.xcassets in Resources */,
+				5B2796F12723E9C200999641 /* RankTVC.xib in Resources */,
 				5B4F02A527082ACD00C04D75 /* Main.storyboard in Resources */,
 				5B8799322711600600148563 /* AutoLayout.storyboard in Resources */,
 			);
@@ -204,13 +277,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B2796F82723FB2100999641 /* RankCVC.swift in Sources */,
+				5B2796E32723DF3A00999641 /* PartDataModel.swift in Sources */,
+				5B2796E12723DA7700999641 /* DelegateViewController.swift in Sources */,
 				5B4F02B2270837EA00C04D75 /* SecondViewController.swift in Sources */,
 				5B8799362711841D00148563 /* CustomTabBarController.swift in Sources */,
 				5B4F02A227082ACD00C04D75 /* ViewController.swift in Sources */,
 				5B2B4610270840930074B585 /* ResultViewController.swift in Sources */,
+				5B2796DF2723D40500999641 /* ThirdSeminarVC.swift in Sources */,
 				5B4F029E27082ACD00C04D75 /* AppDelegate.swift in Sources */,
 				5B87993A2711844900148563 /* PurpleVC.swift in Sources */,
+				5B2796EA2723E8D200999641 /* RankingVC.swift in Sources */,
 				5B4F02A027082ACD00C04D75 /* SceneDelegate.swift in Sources */,
+				5B2796F32723EDD300999641 /* AppContentDataModel.swift in Sources */,
+				5B2796F02723E9C200999641 /* RankTVC.swift in Sources */,
 				5B8799382711842700148563 /* OrangeVC.swift in Sources */,
 				5B2B460E2708408A0074B585 /* FirstViewController.swift in Sources */,
 			);
