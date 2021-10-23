@@ -9,13 +9,13 @@ import UIKit
 
 extension UITextField {
     func addLeftPadding() {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.frame.size.height))
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 14, height: self.frame.size.height))
         self.leftView = paddingView
         self.leftViewMode = .always
     }
     
     func addRightPadding() {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.frame.size.height))
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 14, height: self.frame.size.height))
         self.rightView = paddingView
         self.rightViewMode = .always
     }
@@ -23,12 +23,12 @@ extension UITextField {
     func setTextField(placeholder: String, secure: Bool) {
         self.placeholder = placeholder
         self.isSecureTextEntry = secure
-        self.font = .boldSystemFont(ofSize: 15)
+        self.font = .systemFont(ofSize: 15, weight: .regular)
         self.backgroundColor = .white
         self.borderStyle = .line
-        self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.lightGray.cgColor
-        self.layer.cornerRadius = 7
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.lineGray.cgColor
+        self.layer.cornerRadius = 8
         self.clipsToBounds = true
         self.addLeftPadding()
         self.addRightPadding()

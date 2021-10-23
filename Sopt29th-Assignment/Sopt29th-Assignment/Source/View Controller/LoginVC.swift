@@ -18,31 +18,28 @@ class LoginVC: UIViewController {
     // MARK: - Properties
     fileprivate var currentNonce: String?
 
-    private let logoLabel = UILabel().then {
-        $0.font = .boldSystemFont(ofSize: 50)
-        $0.textColor = .mainBlue
-        $0.text = "Google"
+    private let logoImageView = UIImageView().then {
+        $0.image = Const.Image.logo
+        $0.contentMode = .scaleAspectFit
     }
     
     private let loginLabel = UILabel().then {
-        $0.font = .boldSystemFont(ofSize: 35)
-        $0.textColor = .black
+        $0.font = .systemFont(ofSize: 24, weight: .semibold)
         $0.text = "로그인"
     }
     
     private let explainLabel = UILabel().then {
-        $0.font = .boldSystemFont(ofSize: 16)
-        $0.textColor = .lightGray
+        $0.font = .systemFont(ofSize: 14, weight: .regular)
         $0.numberOfLines = 0
-        $0.textAlignment = .center
         $0.text = Const.Text.Description
+        $0.addSpacing(kernValue: 0, paragraphValue: 7)
     }
     
     private lazy var fieldStackView = UIStackView().then {
         $0.axis = .vertical
         $0.alignment = .fill
         $0.distribution = .fillEqually
-        $0.spacing = 20
+        $0.spacing = 17
     }
     
     private let nameTextField = UITextField().then {
@@ -59,7 +56,7 @@ class LoginVC: UIViewController {
     
     private let appleButton = ASAuthorizationAppleIDButton().then {
         $0.addTarget(self, action: #selector(touchUpAppleButton(_:)), for: .touchUpInside)
-        $0.layer.cornerRadius = 7
+        $0.layer.cornerRadius = 8
         $0.clipsToBounds = true
     }
     
@@ -67,17 +64,12 @@ class LoginVC: UIViewController {
         $0.setTitle("계정만들기", for: .normal)
         $0.setTitleColor(.mainBlue, for: .normal)
         $0.setTitleColor(.white, for: .highlighted)
-        $0.titleLabel?.font = .boldSystemFont(ofSize: 16)
+        $0.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
         $0.addTarget(self, action: #selector(touchupSignupButton(_:)), for: .touchUpInside)
     }
     
-    lazy var signInButton = UIButton().then {
-        $0.isUserInteractionEnabled = false
+    private lazy var signInButton = CustomButton().then {
         $0.setTitle("다음", for: .normal)
-        $0.setTitleColor(.white, for: .normal)
-        $0.titleLabel?.font = .boldSystemFont(ofSize: 18)
-        $0.backgroundColor = .lightGray
-        $0.layer.cornerRadius = 10
         $0.addTarget(self, action: #selector(touchupSignInButton(_:)), for: .touchUpInside)
     }
     
@@ -91,61 +83,62 @@ class LoginVC: UIViewController {
     }
     
     // MARK: - Custom Method
-    func configUI() {
+    private func configUI() {
         view.backgroundColor = .white
+        navigationController?.navigationBar.isHidden = true
     }
     
-    func setupAutoLayout() {
-        view.addSubviews([logoLabel, loginLabel, explainLabel,
+    private func setupAutoLayout() {
+        view.addSubviews([logoImageView, loginLabel, explainLabel,
                           fieldStackView, appleButton, signupButton, signInButton])
         fieldStackView.addArrangedSubviews([nameTextField, emailTextField, pwTextField])
         
-        logoLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(20)
+        logoImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(110)
             make.centerX.equalToSuperview()
         }
         
         loginLabel.snp.makeConstraints { make in
-            make.top.equalTo(logoLabel.snp.bottom).offset(15)
+            make.top.equalTo(logoImageView.snp.bottom).offset(23)
             make.centerX.equalToSuperview()
         }
         
         explainLabel.snp.makeConstraints { make in
-            make.top.equalTo(loginLabel.snp.bottom).offset(35)
-            make.leading.trailing.equalToSuperview().inset(30)
+            make.top.equalTo(loginLabel.snp.bottom).offset(14)
+            make.leading.trailing.equalToSuperview().inset(40)
             make.centerX.equalToSuperview()
         }
         
         nameTextField.snp.makeConstraints { make in
-            make.height.equalTo(60)
+            make.height.equalTo(48)
         }
         
         fieldStackView.snp.makeConstraints { make in
-            make.top.equalTo(explainLabel.snp.bottom).offset(35)
-            make.leading.trailing.equalToSuperview().inset(30)
+            make.top.equalTo(loginLabel.snp.bottom).offset(128)
+            make.leading.trailing.equalToSuperview().inset(22)
             make.centerX.equalToSuperview()
         }
         
         appleButton.snp.makeConstraints { make in
-            make.top.equalTo(fieldStackView.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(30)
-            make.height.equalTo(60)
+            make.top.equalTo(fieldStackView.snp.bottom).offset(17)
+            make.leading.trailing.equalToSuperview().inset(22)
+            make.height.equalTo(48)
         }
         
         signupButton.snp.makeConstraints { make in
-            make.top.equalTo(fieldStackView.snp.bottom).offset(110)
-            make.leading.equalToSuperview().inset(30)
+            make.leading.equalToSuperview().inset(22)
+            make.centerY.equalTo(signInButton.snp.centerY)
         }
         
         signInButton.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(30)
-            make.centerY.equalTo(signupButton.snp.centerY)
-            make.width.equalTo(80)
-            make.height.equalTo(50)
+            make.top.equalTo(fieldStackView.snp.bottom).offset(110)
+            make.trailing.equalToSuperview().inset(22)
+            make.width.equalTo(74)
+            make.height.equalTo(42)
         }
     }
     
-    func setupTextField() {
+    private func setupTextField() {
         nameTextField.delegate = self
         emailTextField.delegate = self
         pwTextField.delegate = self
@@ -158,7 +151,6 @@ class LoginVC: UIViewController {
     @objc func touchUpAppleButton(_ sender: UIButton) {
         let request = createAppleIDRequest()
         let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-        print("애플로그인")
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
@@ -213,7 +205,7 @@ class LoginVC: UIViewController {
             email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ||
             pw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             signInButton.isUserInteractionEnabled = false
-            signInButton.backgroundColor = .lightGray
+            signInButton.backgroundColor = .lineGray
             
         } else {
             signInButton.isUserInteractionEnabled = true
