@@ -17,7 +17,7 @@ class LibraryVC: UIViewController {
     
     // MARK: - Custom Method
     private func configUI() {
-        view.backgroundColor = .purple
+        view.backgroundColor = .systemBackground
     }
     
     private func setupAutoLayout() {

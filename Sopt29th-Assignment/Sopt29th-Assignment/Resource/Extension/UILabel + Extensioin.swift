@@ -8,7 +8,7 @@
 import UIKit
 
 extension UILabel {
-    func addSpacing(kernValue: Double, paragraphValue: CGFloat) {
+    func addSpacing(kernValue: CGFloat = 0, paragraphValue: CGFloat = 7) {
         if let labelText = text, labelText.count > 0 {
             let attributedString = NSMutableAttributedString(string: labelText)
             let paragraphStyle = NSMutableParagraphStyle()
@@ -28,16 +28,6 @@ extension UILabel {
             } else {
                 lineBreakMode = .byWordWrapping
             }
-        }
-    }
-    
-    func addColor(font: UIFont, range: String) {
-        if let labelText = text, labelText.count > 0 {
-            let attributedStr = NSMutableAttributedString(string: labelText)
-            attributedStr.addAttribute(.font,
-                                       value: font,
-                                       range: (labelText as NSString).range(of: range))
-            attributedText = attributedStr
         }
     }
 }

@@ -27,18 +27,15 @@ class CompleteVC: UIViewController {
         $0.numberOfLines = 0
     }
     
-    private let completeButton = CustomButton().then {
-        $0.setTitle("확인", for: .normal)
+    private let completeButton = GoogleButton().then {
+        $0.setUI(title: "확인")
         $0.backgroundColor = .mainBlue
         $0.isUserInteractionEnabled = true
         $0.addTarget(self, action: #selector(touchupCompleteButton(_:)), for: .touchUpInside)
     }
     
-    private let anotherAccountButton = UIButton().then {
-        $0.setTitle("다른 계정으로 로그인하기", for: .normal)
-        $0.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
-        $0.setTitleColor(.mainBlue, for: .normal)
-        $0.setTitleColor(.white, for: .highlighted)
+    private let anotherAccountButton = BaseButton().then {
+        $0.setUI(title: "다른 계정으로 로그인하기")
         $0.addTarget(self, action: #selector(touchupAnotherAccountButton(_:)), for: .touchUpInside)
     }
     

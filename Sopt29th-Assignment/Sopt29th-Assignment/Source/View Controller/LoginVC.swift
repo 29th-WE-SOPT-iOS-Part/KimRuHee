@@ -35,7 +35,7 @@ class LoginVC: UIViewController {
         $0.addSpacing(kernValue: 0, paragraphValue: 7)
     }
     
-    private lazy var fieldStackView = UIStackView().then {
+    private let fieldStackView = UIStackView().then {
         $0.axis = .vertical
         $0.alignment = .fill
         $0.distribution = .fillEqually
@@ -60,16 +60,13 @@ class LoginVC: UIViewController {
         $0.clipsToBounds = true
     }
     
-    private let signupButton = UIButton().then {
-        $0.setTitle("계정만들기", for: .normal)
-        $0.setTitleColor(.mainBlue, for: .normal)
-        $0.setTitleColor(.white, for: .highlighted)
-        $0.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
+    private let signupButton = BaseButton().then {
+        $0.setUI(title: "계정만들기")
         $0.addTarget(self, action: #selector(touchupSignupButton(_:)), for: .touchUpInside)
     }
     
-    private lazy var signInButton = CustomButton().then {
-        $0.setTitle("다음", for: .normal)
+    private let signInButton = GoogleButton().then {
+        $0.setUI(title: "다음")
         $0.addTarget(self, action: #selector(touchupSignInButton(_:)), for: .touchUpInside)
     }
     
@@ -85,7 +82,6 @@ class LoginVC: UIViewController {
     // MARK: - Custom Method
     private func configUI() {
         view.backgroundColor = .white
-        navigationController?.navigationBar.isHidden = true
     }
     
     private func setupAutoLayout() {

@@ -17,7 +17,7 @@ class SubscribeVC: UIViewController {
     
     // MARK: - Custom Method
     private func configUI() {
-        view.backgroundColor = .green
+        view.backgroundColor = .systemBackground
     }
     
     private func setupAutoLayout() {

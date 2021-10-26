@@ -55,9 +55,9 @@ class MainTabVC: UITabBarController {
     }
     
     private func setNavigationController(title: String,
-                                 unselectedImage: UIImage,
-                                 selectedImage: UIImage,
-                                 rootViewController: UIViewController) -> UINavigationController {
+                                         unselectedImage: UIImage,
+                                         selectedImage: UIImage,
+                                         rootViewController: UIViewController) -> UINavigationController {
         let nav = UINavigationController(rootViewController: rootViewController)
         nav.tabBarItem.title = title
         nav.tabBarItem.image = unselectedImage

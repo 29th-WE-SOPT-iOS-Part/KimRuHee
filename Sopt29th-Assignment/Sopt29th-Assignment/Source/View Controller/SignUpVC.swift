@@ -25,7 +25,7 @@ class SignUpVC: UIViewController {
         $0.text = "회원가입"
     }
     
-    private lazy var fieldStackView = UIStackView().then {
+    private let fieldStackView = UIStackView().then {
         $0.axis = .vertical
         $0.alignment = .fill
         $0.distribution = .fillEqually
@@ -60,8 +60,8 @@ class SignUpVC: UIViewController {
         }
     }
     
-    private let signupButton = CustomButton().then {
-        $0.setTitle("다음", for: .normal)
+    private let signupButton = GoogleButton().then {
+        $0.setUI(title: "다음")
         $0.addTarget(self, action: #selector(touchupSignupButton(_:)), for: .touchUpInside)
     }
     
@@ -77,7 +77,6 @@ class SignUpVC: UIViewController {
     // MARK: - Custom Method
     private func configUI() {
         view.backgroundColor = .white
-        navigationController?.navigationBar.isHidden = true
     }
     
     private func setupAutoLayout() {
@@ -158,7 +157,8 @@ class SignUpVC: UIViewController {
                   return
               }
         
-        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: pw) { [self] (result, error) in
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: pw) { [weak self] (result, error) in
+            guard let self = self else { return }
             if error != nil { // error가 nil이 아니다 => error에 뭐가 있다? => error가 있다는 뜻
                 print("회원가입 실패", error?.localizedDescription)
                 
@@ -180,7 +180,7 @@ class SignUpVC: UIViewController {
                 let vc = CompleteVC()
                 vc.name = self.nameTextField.text
                 vc.modalPresentationStyle = .fullScreen
-                present(vc, animated: true, completion: nil)
+                self.present(vc, animated: true, completion: nil)
             }
         }
     }

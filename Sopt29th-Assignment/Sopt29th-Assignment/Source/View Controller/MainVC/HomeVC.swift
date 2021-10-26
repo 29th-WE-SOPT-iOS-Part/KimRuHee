@@ -17,7 +17,7 @@ class HomeVC: UIViewController {
     
     // MARK: - Custom Method
     private func configUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
     }
     
     private func setupAutoLayout() {

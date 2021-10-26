@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B1F0E5227287466007FA469 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1F0E5127287466007FA469 /* BaseButton.swift */; };
 		5B2B4621270B6CC90074B585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B4620270B6CC90074B585 /* AppDelegate.swift */; };
 		5B2B4623270B6CC90074B585 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B4622270B6CC90074B585 /* SceneDelegate.swift */; };
 		5B2B4625270B6CC90074B585 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B4624270B6CC90074B585 /* LoginVC.swift */; };
@@ -23,7 +24,7 @@
 		5B856386271DD7B2002B7F79 /* SubscribeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B856385271DD7B2002B7F79 /* SubscribeVC.swift */; };
 		5B856388271DD7BD002B7F79 /* LibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B856387271DD7BD002B7F79 /* LibraryVC.swift */; };
 		5B85638A271DD7C8002B7F79 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B856389271DD7C8002B7F79 /* AddVC.swift */; };
-		5B85638D271DE864002B7F79 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85638C271DE864002B7F79 /* CustomButton.swift */; };
+		5B85638D271DE864002B7F79 /* GoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85638C271DE864002B7F79 /* GoogleButton.swift */; };
 		5B87992E2710D28C00148563 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B87992D2710D28C00148563 /* GoogleService-Info.plist */; };
 		5B8CAD41271742130016FEAD /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CAD40271742130016FEAD /* UIStackView + Extension.swift */; };
 		5B8CAD44271749F50016FEAD /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CAD43271749F50016FEAD /* Constant.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		4BC503AA186E12A24427A651 /* Pods-Sopt29th-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sopt29th-Assignment.debug.xcconfig"; path = "Target Support Files/Pods-Sopt29th-Assignment/Pods-Sopt29th-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
+		5B1F0E5127287466007FA469 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		5B2B461D270B6CC90074B585 /* Sopt29th-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sopt29th-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2B4620270B6CC90074B585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B2B4622270B6CC90074B585 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +54,7 @@
 		5B856385271DD7B2002B7F79 /* SubscribeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeVC.swift; sourceTree = "<group>"; };
 		5B856387271DD7BD002B7F79 /* LibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryVC.swift; sourceTree = "<group>"; };
 		5B856389271DD7C8002B7F79 /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
-		5B85638C271DE864002B7F79 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		5B85638C271DE864002B7F79 /* GoogleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleButton.swift; sourceTree = "<group>"; };
 		5B87992D2710D28C00148563 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B87992F2710D43A00148563 /* Sopt29th-AssignmentRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sopt29th-AssignmentRelease.entitlements"; sourceTree = "<group>"; };
 		5B8799302710D49200148563 /* Sopt29th-AssignmentDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sopt29th-AssignmentDebug.entitlements"; sourceTree = "<group>"; };
@@ -194,7 +196,8 @@
 		5B85638B271DE840002B7F79 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				5B85638C271DE864002B7F79 /* CustomButton.swift */,
+				5B1F0E5127287466007FA469 /* BaseButton.swift */,
+				5B85638C271DE864002B7F79 /* GoogleButton.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -331,11 +334,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B85638A271DD7C8002B7F79 /* AddVC.swift in Sources */,
-				5B85638D271DE864002B7F79 /* CustomButton.swift in Sources */,
+				5B85638D271DE864002B7F79 /* GoogleButton.swift in Sources */,
 				5B856388271DD7BD002B7F79 /* LibraryVC.swift in Sources */,
 				5B324487270E2ED800CD52D6 /* SignUpVC.swift in Sources */,
 				5B856384271DD786002B7F79 /* ShortsVC.swift in Sources */,
 				5B856382271DD779002B7F79 /* HomeVC.swift in Sources */,
+				5B1F0E5227287466007FA469 /* BaseButton.swift in Sources */,
 				5B8F56E1270F26F300B8F943 /* UIViewController + Extension.swift in Sources */,
 				5B8CAD44271749F50016FEAD /* Constant.swift in Sources */,
 				5B2B463B270B744E0074B585 /* UIView + Extension.swift in Sources */,
