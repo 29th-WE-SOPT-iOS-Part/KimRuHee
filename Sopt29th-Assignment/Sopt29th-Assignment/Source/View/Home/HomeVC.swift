@@ -7,7 +7,14 @@
 
 import UIKit
 
-class HomeVC: UIViewController {    
+import SnapKit
+import Then
+
+class HomeVC: UIViewController {
+    // MARK: - Properties
+    private let logoImageView = UIImageView.then {
+    }
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
