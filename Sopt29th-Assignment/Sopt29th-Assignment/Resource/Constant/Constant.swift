@@ -57,17 +57,6 @@ struct Const {
         static let ggamju8 = "ggamju8"
     }
     
-    struct Cell {
-        // CollectionCell
-//        static let channelCVC = "ChannelCVC"
-//        static let tagCVC = "TagCVC"
-//        
-//        // TableViewCell
-//        static let channelTVC = "ChannelTVC"
-//        static let tagTVC = "TagTVC"
-//        static let videoTVC = "VideoTVC"
-    }
-    
     struct Tag {
         static let post = UIImageView(image: UIImage(named: "post"))
         static let pause = UIImageView(image: UIImage(named: "pause"))
