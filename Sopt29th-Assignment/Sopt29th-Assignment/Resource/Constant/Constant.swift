@@ -59,13 +59,13 @@ struct Const {
     
     struct Cell {
         // CollectionCell
-        static let channelCVC = "ChannelCVC"
-        static let tagCVC = "TagCVC"
-        
-        // TableViewCell
-        static let channelTVC = "ChannelTVC"
-        static let tagTVC = "TagTVC"
-        static let videoTVC = "VideoTVC"
+//        static let channelCVC = "ChannelCVC"
+//        static let tagCVC = "TagCVC"
+//        
+//        // TableViewCell
+//        static let channelTVC = "ChannelTVC"
+//        static let tagTVC = "TagTVC"
+//        static let videoTVC = "VideoTVC"
     }
     
     struct Tag {

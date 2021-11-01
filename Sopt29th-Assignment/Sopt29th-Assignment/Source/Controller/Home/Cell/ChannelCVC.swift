@@ -14,7 +14,7 @@ import Then
  ChannelTVC에 있는 ChannelCV의 구독 채널 스토리 CollectionViewCell
  */
 
-class ChannelCVC: UICollectionViewCell {
+class ChannelCVC: UICollectionViewCell, UICollectionViewRegisterable {
         
     // MARK: - Properties
     
@@ -28,7 +28,7 @@ class ChannelCVC: UICollectionViewCell {
         $0.font = .systemFont(ofSize: 12, weight: .regular)
     }
     
-    // MARK: - Lifecycle
+    // MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)

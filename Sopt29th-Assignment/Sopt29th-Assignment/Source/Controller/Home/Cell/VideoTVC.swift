@@ -14,7 +14,7 @@ import Then
  HomeVC의 구독 채널 영상 TableViewCell - 3번째 Cell
  */
 
-class VideoTVC: UITableViewCell {
+class VideoTVC: UITableViewCell, UITableViewRegisterable {
         
     // MARK: - Properties
     
@@ -40,7 +40,7 @@ class VideoTVC: UITableViewCell {
         $0.setImage(Const.Image.moreMenu, for: .normal)
     }
     
-    // MARK: - init
+    // MARK: - Init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

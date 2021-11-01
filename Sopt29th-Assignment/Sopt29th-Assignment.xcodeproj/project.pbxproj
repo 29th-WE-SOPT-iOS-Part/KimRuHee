@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B01708827306BC600E8010E /* UITableViewRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01708727306BC600E8010E /* UITableViewRegisterable.swift */; };
+		5B01708A27306C0100E8010E /* UICollectionViewRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01708927306C0100E8010E /* UICollectionViewRegisterable.swift */; };
 		5B1F0E5227287466007FA469 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1F0E5127287466007FA469 /* BaseButton.swift */; };
 		5B2B4621270B6CC90074B585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B4620270B6CC90074B585 /* AppDelegate.swift */; };
 		5B2B4623270B6CC90074B585 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2B4622270B6CC90074B585 /* SceneDelegate.swift */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		4BC503AA186E12A24427A651 /* Pods-Sopt29th-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sopt29th-Assignment.debug.xcconfig"; path = "Target Support Files/Pods-Sopt29th-Assignment/Pods-Sopt29th-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
+		5B01708727306BC600E8010E /* UITableViewRegisterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewRegisterable.swift; sourceTree = "<group>"; };
+		5B01708927306C0100E8010E /* UICollectionViewRegisterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewRegisterable.swift; sourceTree = "<group>"; };
 		5B1F0E5127287466007FA469 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		5B2B461D270B6CC90074B585 /* Sopt29th-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sopt29th-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2B4620270B6CC90074B585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5B01708627306BAA00E8010E /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				5B01708927306C0100E8010E /* UICollectionViewRegisterable.swift */,
+				5B01708727306BC600E8010E /* UITableViewRegisterable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		5B2B4614270B6CC90074B585 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +160,7 @@
 			children = (
 				5B8CAD42271749E40016FEAD /* Constant */,
 				5B2B4639270B742F0074B585 /* Extension */,
+				5B01708627306BAA00E8010E /* Protocol */,
 				5B2B4636270B6CE90074B585 /* Support */,
 				5B2B4637270B6CF10074B585 /* Storyboard */,
 				5B2B4629270B6CCC0074B585 /* Assets.xcassets */,
@@ -188,12 +202,12 @@
 		5B2B4639270B742F0074B585 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				5B2B463A270B744E0074B585 /* UIView + Extension.swift */,
+				5B324484270E1EDC00CD52D6 /* UIColor + Extension.swift */,
+				5B85637C271DCC9B002B7F79 /* UILabel + Extensioin.swift */,
 				5B8CAD40271742130016FEAD /* UIStackView + Extension.swift */,
 				5B324482270E183700CD52D6 /* UITextField + Extension.swift */,
-				5B324484270E1EDC00CD52D6 /* UIColor + Extension.swift */,
+				5B2B463A270B744E0074B585 /* UIView + Extension.swift */,
 				5B8F56E0270F26F300B8F943 /* UIViewController + Extension.swift */,
-				5B85637C271DCC9B002B7F79 /* UILabel + Extensioin.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -424,6 +438,7 @@
 				5B7039C6272C42E300575291 /* Video.swift in Sources */,
 				5B324487270E2ED800CD52D6 /* SignUpVC.swift in Sources */,
 				5B856384271DD786002B7F79 /* ShortsVC.swift in Sources */,
+				5B01708827306BC600E8010E /* UITableViewRegisterable.swift in Sources */,
 				5B856382271DD779002B7F79 /* HomeVC.swift in Sources */,
 				5B74A40127302F21002A8B74 /* TagTVC.swift in Sources */,
 				5B1F0E5227287466007FA469 /* BaseButton.swift in Sources */,
@@ -435,6 +450,7 @@
 				5B8EB2382729EFA900D64C46 /* ChannelCVC.swift in Sources */,
 				5B85637F271DD5A0002B7F79 /* MainTabVC.swift in Sources */,
 				5B856386271DD7B2002B7F79 /* SubscribeVC.swift in Sources */,
+				5B01708A27306C0100E8010E /* UICollectionViewRegisterable.swift in Sources */,
 				5B85637D271DCC9B002B7F79 /* UILabel + Extensioin.swift in Sources */,
 				5B8CAD41271742130016FEAD /* UIStackView + Extension.swift in Sources */,
 				5B324483270E183700CD52D6 /* UITextField + Extension.swift in Sources */,

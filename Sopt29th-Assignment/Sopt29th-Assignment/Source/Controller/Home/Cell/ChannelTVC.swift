@@ -14,7 +14,7 @@ import Then
  HomeVC의 구독 채널 스토리 + 필터링 버튼 TableViewCell - 1번째 Cell
  */
 
-class ChannelTVC: UITableViewCell {
+class ChannelTVC: UITableViewCell, UITableViewRegisterable {
     
     // MARK: - Properties
     
@@ -23,6 +23,9 @@ class ChannelTVC: UITableViewCell {
     private lazy var channelCV = UICollectionView(frame: .zero,
                                                   collectionViewLayout: layout).then {
         $0.showsHorizontalScrollIndicator = false
+        $0.delegate = self
+        $0.dataSource = self
+        ChannelCVC.register(target: $0)
     }
     
     private let layout = UICollectionViewFlowLayout().then {
@@ -33,12 +36,11 @@ class ChannelTVC: UITableViewCell {
         $0.backgroundColor = .dividerGray
     }
     
-    // MARK: - init
+    // MARK: - Init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupAutoLayout()
-        setupCollectionView()
     }
     
     required init?(coder: NSCoder) {
@@ -60,12 +62,6 @@ class ChannelTVC: UITableViewCell {
             make.height.equalTo(1)
         }
     }
-    
-    func setupCollectionView() {
-        channelCV.delegate = self
-        channelCV.dataSource = self
-        channelCV.register(ChannelCVC.self, forCellWithReuseIdentifier: Const.Cell.channelCVC)
-    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -80,7 +76,7 @@ extension ChannelTVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Cell.channelCVC, for: indexPath) as? ChannelCVC
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChannelCVC.className, for: indexPath) as? ChannelCVC
         else { return UICollectionViewCell() }
         cell.setData(image: channel.list[indexPath.row].makeImage(),
                      name: channel.list[indexPath.row].name)

@@ -10,6 +10,7 @@ import UIKit
 /**
     배경색이 있는 버튼에 해당합니다
  */
+
 class GoogleButton: UIButton {
     
     override var isHighlighted: Bool {

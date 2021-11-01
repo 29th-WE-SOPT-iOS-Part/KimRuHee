@@ -14,7 +14,7 @@ import Then
  HomeVC의 필터링 버튼 TableViewCell - 2번째 Cell
  */
 
-class TagTVC: UITableViewCell {
+class TagTVC: UITableViewCell, UITableViewRegisterable {
     
     // MARK: - Properties
         
@@ -33,7 +33,7 @@ class TagTVC: UITableViewCell {
         $0.backgroundColor = .dividerGray
     }
     
-    // MARK: - init
+    // MARK: - Init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

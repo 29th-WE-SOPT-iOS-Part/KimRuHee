@@ -17,9 +17,18 @@ class HomeVC: UIViewController {
     private let video = VideoData()
     private let channel = ChannelData()
     
-    private let homeTV = UITableView().then {
+    private lazy var homeTV = UITableView().then {
         $0.separatorStyle = .none
         $0.allowsSelection = false
+        $0.delegate = self
+        $0.dataSource = self
+        ChannelTVC.register(target: $0)
+        TagTVC.register(target: $0)
+        VideoTVC.register(target: $0)
+        
+        if #available(iOS 15, *) {
+            $0.sectionHeaderTopPadding = 0
+        }
     }
     
     // MARK: - Lifecycle
@@ -28,7 +37,6 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         configUI()
         setupAutoLayout()
-        setupTableView()
     }
     
     // MARK: - Custom Method
@@ -44,18 +52,6 @@ class HomeVC: UIViewController {
         homeTV.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide)
             make.leading.bottom.trailing.equalToSuperview()
-        }
-    }
-    
-    func setupTableView() {
-        homeTV.delegate = self
-        homeTV.dataSource = self
-        homeTV.register(ChannelTVC.self, forCellReuseIdentifier: Const.Cell.channelTVC)
-        homeTV.register(TagTVC.self, forCellReuseIdentifier: Const.Cell.tagTVC)
-        homeTV.register(VideoTVC.self, forCellReuseIdentifier: Const.Cell.videoTVC)
-        
-        if #available(iOS 15, *) {
-            homeTV.sectionHeaderTopPadding = 0
         }
     }
 }
@@ -113,18 +109,18 @@ extension HomeVC: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             if indexPath.row == 0 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: Const.Cell.channelTVC) as? ChannelTVC
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: ChannelTVC.className) as? ChannelTVC
                 else { return UITableViewCell() }
                 return cell
                 
             }
             /// TagCell
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: Const.Cell.tagTVC) as? TagTVC
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TagTVC.className) as? TagTVC
             else { return UITableViewCell() }
             return cell
             
         default:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: Const.Cell.videoTVC) as? VideoTVC
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoTVC.className) as? VideoTVC
             else { return UITableViewCell() }
             cell.setData(thumb: video.list[indexPath.row].makeImage(),
                          title: video.list[indexPath.row].title,

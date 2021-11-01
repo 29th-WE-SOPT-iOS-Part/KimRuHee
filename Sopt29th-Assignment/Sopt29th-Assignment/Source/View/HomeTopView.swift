@@ -45,7 +45,7 @@ class HomeTopView: UIView {
         $0.setImage(Const.Image.Profile, for: .normal)
     }
     
-    // MARK: - Lifecycle
+    // MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
