@@ -19,6 +19,7 @@ class HomeVC: UIViewController {
     
     private let homeTV = UITableView().then {
         $0.separatorStyle = .none
+        $0.allowsSelection = false
     }
     
     // MARK: - Lifecycle
