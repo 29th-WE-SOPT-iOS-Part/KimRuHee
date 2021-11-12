@@ -14,7 +14,9 @@ import SnapKit
 import Then
 
 class SignUpVC: UIViewController {
+    
     // MARK: - Properties
+    
     private let logoImageView = UIImageView().then {
         $0.image = Const.Image.logo
         $0.contentMode = .scaleAspectFit
@@ -66,6 +68,7 @@ class SignUpVC: UIViewController {
     }
     
     // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -75,6 +78,7 @@ class SignUpVC: UIViewController {
     }
     
     // MARK: - Custom Method
+    
     private func configUI() {
         view.backgroundColor = .white
     }
@@ -126,6 +130,7 @@ class SignUpVC: UIViewController {
     }
     
     // MARK: - @objc
+    
     @objc func textFieldDidChange(textField: UITextField){
         guard let name = nameTextField.text,
               let email = emailTextField.text,
@@ -187,6 +192,7 @@ class SignUpVC: UIViewController {
 }
 
 // MARK: - UITextFieldDelegate
+
 extension SignUpVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {

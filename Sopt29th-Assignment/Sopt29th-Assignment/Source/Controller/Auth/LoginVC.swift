@@ -15,7 +15,9 @@ import SnapKit
 import Then
 
 class LoginVC: UIViewController {
+    
     // MARK: - Properties
+    
     fileprivate var currentNonce: String?
 
     private let logoImageView = UIImageView().then {
@@ -71,6 +73,7 @@ class LoginVC: UIViewController {
     }
     
     // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -80,6 +83,7 @@ class LoginVC: UIViewController {
     }
     
     // MARK: - Custom Method
+    
     private func configUI() {
         view.backgroundColor = .white
     }
@@ -144,6 +148,7 @@ class LoginVC: UIViewController {
     }
     
     // MARK: - Apple 로그인
+    
     @objc func touchUpAppleButton(_ sender: UIButton) {
         let request = createAppleIDRequest()
         let authorizationController = ASAuthorizationController(authorizationRequests: [request])
@@ -190,6 +195,7 @@ class LoginVC: UIViewController {
     }
     
     // MARK: - @objc
+    
     @objc func textFieldDidChange(textField: UITextField){
         guard let name = nameTextField.text,
               let email = emailTextField.text,
@@ -241,6 +247,7 @@ class LoginVC: UIViewController {
 }
 
 // MARK: - UITextFieldDelegate
+
 extension LoginVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
@@ -254,6 +261,7 @@ extension LoginVC: UITextFieldDelegate {
 }
 
 // MARK: - ASAuthorizationControllerDelegate
+
 @available(iOS 13.0, *)
 extension LoginVC: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
@@ -310,6 +318,7 @@ extension LoginVC: ASAuthorizationControllerDelegate {
 }
 
 // MARK: - ASAuthorizationControllerPresentationContextProviding
+
 @available(iOS 13.0, *)
 extension LoginVC: ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
