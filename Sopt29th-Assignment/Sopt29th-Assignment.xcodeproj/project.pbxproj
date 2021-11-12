@@ -22,6 +22,12 @@
 		5B7039C4272C3D3E00575291 /* VideoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7039C3272C3D3E00575291 /* VideoTVC.swift */; };
 		5B7039C6272C42E300575291 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7039C5272C42E300575291 /* Video.swift */; };
 		5B7039CC272C4D9A00575291 /* ChannelTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7039CB272C4D9A00575291 /* ChannelTVC.swift */; };
+		5B7230E7273E50B300BB4FDE /* GeneralAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7230E6273E50B300BB4FDE /* GeneralAPI.swift */; };
+		5B7230E9273E514000BB4FDE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7230E8273E514000BB4FDE /* AuthService.swift */; };
+		5B7230EC273E5BA000BB4FDE /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7230EB273E5BA000BB4FDE /* LoginRequest.swift */; };
+		5B7230EF273E5BC800BB4FDE /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7230EE273E5BC800BB4FDE /* SignUpRequest.swift */; };
+		5B7230F1273E5BD300BB4FDE /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7230F0273E5BD300BB4FDE /* AuthModel.swift */; };
+		5B7230F5273E5C3C00BB4FDE /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7230F4273E5C3C00BB4FDE /* AuthManager.swift */; };
 		5B74A40127302F21002A8B74 /* TagTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B74A40027302F21002A8B74 /* TagTVC.swift */; };
 		5B85637D271DCC9B002B7F79 /* UILabel + Extensioin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85637C271DCC9B002B7F79 /* UILabel + Extensioin.swift */; };
 		5B85637F271DD5A0002B7F79 /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B85637E271DD5A0002B7F79 /* MainTabVC.swift */; };
@@ -61,6 +67,12 @@
 		5B7039C3272C3D3E00575291 /* VideoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTVC.swift; sourceTree = "<group>"; };
 		5B7039C5272C42E300575291 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		5B7039CB272C4D9A00575291 /* ChannelTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTVC.swift; sourceTree = "<group>"; };
+		5B7230E6273E50B300BB4FDE /* GeneralAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralAPI.swift; sourceTree = "<group>"; };
+		5B7230E8273E514000BB4FDE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		5B7230EB273E5BA000BB4FDE /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		5B7230EE273E5BC800BB4FDE /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
+		5B7230F0273E5BD300BB4FDE /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		5B7230F4273E5C3C00BB4FDE /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		5B74A40027302F21002A8B74 /* TagTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTVC.swift; sourceTree = "<group>"; };
 		5B85637C271DCC9B002B7F79 /* UILabel + Extensioin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensioin.swift"; sourceTree = "<group>"; };
 		5B85637E271DD5A0002B7F79 /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
@@ -148,6 +160,7 @@
 		5B2B4634270B6CDC0074B585 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5B7230E4273E508C00BB4FDE /* Network */,
 				5B8EB2392729F04B00D64C46 /* Model */,
 				5B8EB2322729E17B00D64C46 /* View */,
 				5B2B4638270B6D490074B585 /* Controller */,
@@ -210,6 +223,42 @@
 				5B8F56E0270F26F300B8F943 /* UIViewController + Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		5B7230E4273E508C00BB4FDE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5B7230EA273E514F00BB4FDE /* Manager */,
+				5B7230E5273E509300BB4FDE /* APIService */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5B7230E5273E509300BB4FDE /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				5B7230E6273E50B300BB4FDE /* GeneralAPI.swift */,
+				5B7230E8273E514000BB4FDE /* AuthService.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		5B7230EA273E514F00BB4FDE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5B7230F4273E5C3C00BB4FDE /* AuthManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		5B7230ED273E5BB900BB4FDE /* AuthModel */ = {
+			isa = PBXGroup;
+			children = (
+				5B7230F0273E5BD300BB4FDE /* AuthModel.swift */,
+				5B7230EB273E5BA000BB4FDE /* LoginRequest.swift */,
+				5B7230EE273E5BC800BB4FDE /* SignUpRequest.swift */,
+			);
+			path = AuthModel;
 			sourceTree = "<group>";
 		};
 		5B856380271DD75B002B7F79 /* Shorts */ = {
@@ -303,6 +352,7 @@
 		5B8EB2392729F04B00D64C46 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5B7230ED273E5BB900BB4FDE /* AuthModel */,
 				5B8EB23A2729F0B200D64C46 /* Channel.swift */,
 				5B7039C5272C42E300575291 /* Video.swift */,
 			);
@@ -433,14 +483,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B85638A271DD7C8002B7F79 /* AddVC.swift in Sources */,
+				5B7230F5273E5C3C00BB4FDE /* AuthManager.swift in Sources */,
+				5B7230E9273E514000BB4FDE /* AuthService.swift in Sources */,
 				5B85638D271DE864002B7F79 /* GoogleButton.swift in Sources */,
 				5B856388271DD7BD002B7F79 /* LibraryVC.swift in Sources */,
 				5B7039C6272C42E300575291 /* Video.swift in Sources */,
 				5B324487270E2ED800CD52D6 /* SignUpVC.swift in Sources */,
 				5B856384271DD786002B7F79 /* ShortsVC.swift in Sources */,
 				5B01708827306BC600E8010E /* UITableViewRegisterable.swift in Sources */,
+				5B7230EF273E5BC800BB4FDE /* SignUpRequest.swift in Sources */,
 				5B856382271DD779002B7F79 /* HomeVC.swift in Sources */,
 				5B74A40127302F21002A8B74 /* TagTVC.swift in Sources */,
+				5B7230F1273E5BD300BB4FDE /* AuthModel.swift in Sources */,
 				5B1F0E5227287466007FA469 /* BaseButton.swift in Sources */,
 				5B8EB2312729DB7900D64C46 /* HomeTopView.swift in Sources */,
 				5B8F56E1270F26F300B8F943 /* UIViewController + Extension.swift in Sources */,
@@ -459,8 +513,10 @@
 				5B7039CC272C4D9A00575291 /* ChannelTVC.swift in Sources */,
 				5B324485270E1EDC00CD52D6 /* UIColor + Extension.swift in Sources */,
 				5B8F56DF270F1FE100B8F943 /* CompleteVC.swift in Sources */,
+				5B7230E7273E50B300BB4FDE /* GeneralAPI.swift in Sources */,
 				5B2B4621270B6CC90074B585 /* AppDelegate.swift in Sources */,
 				5B2B4623270B6CC90074B585 /* SceneDelegate.swift in Sources */,
+				5B7230EC273E5BA000BB4FDE /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
