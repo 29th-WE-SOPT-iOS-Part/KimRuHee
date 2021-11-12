@@ -9,6 +9,4 @@ import Foundation
 
 struct GeneralAPI {
     static let baseURL = "https://asia-northeast3-we-sopt-29.cloudfunctions.net/api"
-    static let signup = "/user/signup"
-    static let login = "/user/login"
 }
