@@ -18,7 +18,7 @@ class AuthManager {
     // MARK: - Network Properties
 
     private let authProvider = MoyaProvider<AuthService>(plugins: [NetworkLoggerPlugin()])
-    private var authModel: AuthModel?
+    public var authModel: AuthModel?
     
     // MARK: - POST : Login
     
@@ -30,6 +30,7 @@ class AuthManager {
                 do {
                     self.authModel = try result.map(AuthModel.self)
                     completion()
+                    
                 } catch(let err) {
                     print(err.localizedDescription)
                 }
@@ -50,6 +51,7 @@ class AuthManager {
                 do {
                     self.authModel = try result.map(AuthModel.self)
                     completion()
+                    print("성공")
                 } catch(let err) {
                     print(err.localizedDescription)
                 }

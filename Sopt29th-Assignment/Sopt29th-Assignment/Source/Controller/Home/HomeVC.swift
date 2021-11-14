@@ -55,7 +55,7 @@ class HomeVC: UIViewController, ProfileButtonDelegate {
     }
     
     func clickProfileButton() {
-        let vc = LoginVC()
+        let vc = UINavigationController(rootViewController: LoginVC())
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true, completion: nil)
     }
