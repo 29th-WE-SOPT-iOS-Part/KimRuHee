@@ -40,7 +40,6 @@ class AuthManager {
         }
     }
     
-    
     // MARK: - POST : SignUp
     
     func fetchSignUp(email: String, name: String, password: String, completion: @escaping (() -> ())) {
@@ -51,7 +50,6 @@ class AuthManager {
                 do {
                     self.authModel = try result.map(AuthModel.self)
                     completion()
-                    print("성공")
                 } catch(let err) {
                     print(err.localizedDescription)
                 }
