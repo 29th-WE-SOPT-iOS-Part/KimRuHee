@@ -14,10 +14,9 @@
 |`1주차`| iOS 컴포넌트 이해, Xcode 기본 사용법, View 화면 전환|[#2](https://github.com/29th-WE-SOPT-iOS-Part/KimRuHee/issues/2)|😊|[🥳](https://huree-can-do-it.notion.site/1-346d8696de7d46bf9df414448ea67ff5)|[✨](https://huree-can-do-it.notion.site/1-4697482733f246c98b2b7711d2e71859)|
 |`2주차`| AutoLayout, StackView, TabBarController |[#6](https://github.com/29th-WE-SOPT-iOS-Part/KimRuHee/issues/6)|😊|[🥳](https://huree-can-do-it.notion.site/2-cbe2e7c3b6b34d688df63825d2c8410f)|[✨](https://huree-can-do-it.notion.site/2-4b0ea88739494b878075f61d8c03bd67)|
 |`3주차`| ScrollView, TableView, CollectionView |[#10](https://github.com/29th-WE-SOPT-iOS-Part/KimRuHee/issues/10)|😊|-|-|
-|`4주차`| Cocoapods & Networking, REST API | | | |
-|`5주차`| 디자인 합동 세미나 | | | |
+|`4주차`| Cocoapods & Networking, REST API |[#12](https://github.com/29th-WE-SOPT-iOS-Part/KimRuHee/issues/12)|😊|-|-|
+|`5주차`| 디자인 합동 세미나 |[🎨](https://github.com/SOPT-29th-Joint-Seminar-11/Tabling-iOS)|😊|-|-|
 |`6주차`| 서버 합동 세미나 + 솝커톤 | | | |
 |`7주차`| Animation과 제스처, 데이터 전달 심화 | | | |
 |`8주차`| 협업 시 도움이 되는 팁과 라이브러리 사용 | | | |
-
 
