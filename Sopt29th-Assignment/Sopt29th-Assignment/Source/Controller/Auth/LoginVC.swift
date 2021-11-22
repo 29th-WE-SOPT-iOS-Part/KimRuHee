@@ -15,8 +15,12 @@ import SnapKit
 import Then
 
 class LoginVC: UIViewController {
+    
     // MARK: - Properties
+    
     fileprivate var currentNonce: String?
+    
+    private let networkMG = AuthManager.shared
 
     private let logoImageView = UIImageView().then {
         $0.image = Const.Image.logo
@@ -71,6 +75,7 @@ class LoginVC: UIViewController {
     }
     
     // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -80,6 +85,7 @@ class LoginVC: UIViewController {
     }
     
     // MARK: - Custom Method
+    
     private func configUI() {
         view.backgroundColor = .white
     }
@@ -144,6 +150,7 @@ class LoginVC: UIViewController {
     }
     
     // MARK: - Apple 로그인
+    
     @objc func touchUpAppleButton(_ sender: UIButton) {
         let request = createAppleIDRequest()
         let authorizationController = ASAuthorizationController(authorizationRequests: [request])
@@ -179,7 +186,7 @@ class LoginVC: UIViewController {
     
     
     func getUserProfile() {
-        // 사용자 프로필 가져오기
+        /// 사용자 프로필 가져오기
         if let currentEmail = FirebaseAuth.Auth.auth().currentUser?.email {
             let vc = CompleteVC()
             print("파이어베이스 로그인 성공", currentEmail)
@@ -190,6 +197,7 @@ class LoginVC: UIViewController {
     }
     
     // MARK: - @objc
+    
     @objc func textFieldDidChange(textField: UITextField){
         guard let name = nameTextField.text,
               let email = emailTextField.text,
@@ -217,30 +225,48 @@ class LoginVC: UIViewController {
     @objc func touchupSignInButton(_ sender: UIButton) {
         guard let email = emailTextField.text, !email.isEmpty,
               let pw = pwTextField.text, !pw.isEmpty else {
-                  print("이메일과 패스워드를 입력해주세요.")
                   return
               }
-        
-        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: pw) { [weak self] user, error in
-            guard let self = self else { return }
-            // 에러가 나거나 유저가 없을 경우
-            if let error = error, user == nil {
-                let alert = UIAlertController(
-                    title: "로그인 실패",
-                    message: error.localizedDescription,
-                    preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction(title: "확인", style: .default))
-                self.present(alert, animated: true, completion: nil)
-                
-            } else { // 성공이면 화면전환하고 프로필 가져오기
-                self.getUserProfile()
+    
+        networkMG.fetchLogin(email: email, password: pw) {
+            let loginAlert = UIAlertController(title: "로그인",
+                                               message: self.networkMG.authModel?.message,
+                                               preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
+                guard let self = self else { return }
+                if self.networkMG.authModel?.status == 200 {
+                    let vc = CompleteVC()
+                    vc.name = self.networkMG.authModel?.data?.name
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+                }
             }
+            loginAlert.addAction(confirmAction)
+            self.present(loginAlert, animated: true, completion: nil)
         }
+        
+        /// 이 부분은 파이어베이스 이메일 인증 로그인이라 잠시 주석처리를 해두었습니다.
+//        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: pw) { [weak self] user, error in
+//            guard let self = self else { return }
+//            /// 에러가 나거나 유저가 없을 경우
+//            if let error = error, user == nil {
+//                let alert = UIAlertController(
+//                    title: "로그인 실패",
+//                    message: error.localizedDescription,
+//                    preferredStyle: .alert)
+//
+//                alert.addAction(UIAlertAction(title: "확인", style: .default))
+//                self.present(alert, animated: true, completion: nil)
+//
+//            } else { /// 성공이면 화면전환하고 프로필 가져오기
+//                self.getUserProfile()
+//            }
+//        }
     }
 }
 
 // MARK: - UITextFieldDelegate
+
 extension LoginVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
@@ -254,6 +280,7 @@ extension LoginVC: UITextFieldDelegate {
 }
 
 // MARK: - ASAuthorizationControllerDelegate
+
 @available(iOS 13.0, *)
 extension LoginVC: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
@@ -310,6 +337,7 @@ extension LoginVC: ASAuthorizationControllerDelegate {
 }
 
 // MARK: - ASAuthorizationControllerPresentationContextProviding
+
 @available(iOS 13.0, *)
 extension LoginVC: ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
@@ -346,6 +374,5 @@ private func randomNonceString(length: Int = 32) -> String {
       }
     }
   }
-
   return result
 }

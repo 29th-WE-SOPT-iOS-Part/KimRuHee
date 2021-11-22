@@ -13,7 +13,9 @@ import SnapKit
 import Then
 
 class CompleteVC: UIViewController {
+    
     // MARK: - Properties
+    
     var name: String?
     
     private let logoImageView = UIImageView().then {
@@ -40,6 +42,7 @@ class CompleteVC: UIViewController {
     }
     
     // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -48,6 +51,7 @@ class CompleteVC: UIViewController {
     }
     
     // MARK: - Custom Method
+    
     private func configUI() {
         view.backgroundColor = .white
         navigationController?.navigationBar.isHidden = true
@@ -88,6 +92,7 @@ class CompleteVC: UIViewController {
     }
     
     // MARK: - @objc
+    
     @objc func touchupCompleteButton(_ sender: UIButton) {
         let mainVC = MainTabVC()
         mainVC.modalPresentationStyle = .fullScreen

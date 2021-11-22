@@ -14,7 +14,11 @@ import SnapKit
 import Then
 
 class SignUpVC: UIViewController {
+    
     // MARK: - Properties
+    
+    private let networkMG = AuthManager.shared
+    
     private let logoImageView = UIImageView().then {
         $0.image = Const.Image.logo
         $0.contentMode = .scaleAspectFit
@@ -43,7 +47,7 @@ class SignUpVC: UIViewController {
     private let pwTextField = UITextField().then {
         $0.setTextField(placeholder: "비밀번호 입력", secure: true)
     }
-        
+    
     private lazy var showButton = UIButton().then {
         var configShow = UIButton.Configuration.plain()
         configShow.title = "비밀번호 표시"
@@ -66,6 +70,7 @@ class SignUpVC: UIViewController {
     }
     
     // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -75,6 +80,7 @@ class SignUpVC: UIViewController {
     }
     
     // MARK: - Custom Method
+    
     private func configUI() {
         view.backgroundColor = .white
     }
@@ -103,7 +109,7 @@ class SignUpVC: UIViewController {
             make.leading.trailing.equalToSuperview().inset(22)
             make.centerX.equalToSuperview()
         }
-
+        
         showButton.snp.makeConstraints { make in
             make.top.equalTo(fieldStackView.snp.bottom).offset(17)
             make.leading.equalToSuperview().inset(11)
@@ -126,6 +132,7 @@ class SignUpVC: UIViewController {
     }
     
     // MARK: - @objc
+    
     @objc func textFieldDidChange(textField: UITextField){
         guard let name = nameTextField.text,
               let email = emailTextField.text,
@@ -153,40 +160,58 @@ class SignUpVC: UIViewController {
         guard let name = nameTextField.text, !name.isEmpty,
               let email = emailTextField.text, !email.isEmpty,
               let pw = pwTextField.text, !pw.isEmpty else {
-                  print("다 입력해주세요.")
                   return
               }
         
-        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: pw) { [weak self] (result, error) in
-            guard let self = self else { return }
-            if error != nil { // error가 nil이 아니다 => error에 뭐가 있다? => error가 있다는 뜻
-                print("회원가입 실패", error?.localizedDescription)
-                
-            } else {
-                // 데이터 추가
-                let db = Firestore.firestore()
-                var ref: DocumentReference? = nil
-                ref = db.collection("users").addDocument(data: ["이름":name,
-                                                                "이메일":email,
-                                                                "uid":result!.user.uid]) { (error) in
-
-                    if error != nil {
-                        print(error?.localizedDescription ?? "사용자 데이터 저장 오류")
-                    } else {
-                        print("데이터 추가", ref!.documentID)
-                    }
+        networkMG.fetchSignUp(email: email, name: name, password: pw) {
+            let signupAlert = UIAlertController(title: "회원가입",
+                                                message: self.networkMG.authModel?.message,
+                                                preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
+                guard let self = self else { return }
+                if self.networkMG.authModel?.status == 200 {
+                    let vc = CompleteVC()
+                    vc.name = self.networkMG.authModel?.data?.name
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
                 }
-                // home으로 화면전환
-                let vc = CompleteVC()
-                vc.name = self.nameTextField.text
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true, completion: nil)
             }
+            signupAlert.addAction(confirmAction)
+            self.present(signupAlert, animated: true, completion: nil)
         }
+        
+        /// 파이어베이스 회원가입이라 주석처리를 해두었습니다.
+        //        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: pw) { [weak self] (result, error) in
+        //            guard let self = self else { return }
+        //            if error != nil { // error가 nil이 아니다 => error에 뭐가 있다? => error가 있다는 뜻
+        //                print("회원가입 실패", error?.localizedDescription)
+        //
+        //            } else {
+        //                // 데이터 추가
+        //                let db = Firestore.firestore()
+        //                var ref: DocumentReference? = nil
+        //                ref = db.collection("users").addDocument(data: ["이름":name,
+        //                                                                "이메일":email,
+        //                                                                "uid":result!.user.uid]) { (error) in
+        //
+        //                    if error != nil {
+        //                        print(error?.localizedDescription ?? "사용자 데이터 저장 오류")
+        //                    } else {
+        //                        print("데이터 추가", ref!.documentID)
+        //                    }
+        //                }
+        //                // home으로 화면전환
+        //                let vc = CompleteVC()
+        //                vc.name = self.nameTextField.text
+        //                vc.modalPresentationStyle = .fullScreen
+        //                self.present(vc, animated: true, completion: nil)
+        //            }
+        //        }
     }
 }
 
 // MARK: - UITextFieldDelegate
+
 extension SignUpVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {

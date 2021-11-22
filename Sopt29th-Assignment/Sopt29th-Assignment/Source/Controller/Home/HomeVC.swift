@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, ProfileButtonDelegate {
     
     // MARK: - Properties
     
@@ -43,7 +43,6 @@ class HomeVC: UIViewController {
     
     private func configUI() {
         view.backgroundColor = .systemBackground
-        navigationController?.navigationBar.isHidden = true
     }
     
     private func setupAutoLayout() {
@@ -53,6 +52,12 @@ class HomeVC: UIViewController {
             make.top.equalTo(self.view.safeAreaLayoutGuide)
             make.leading.bottom.trailing.equalToSuperview()
         }
+    }
+    
+    func clickProfileButton() {
+        let vc = UINavigationController(rootViewController: LoginVC())
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 }
 
@@ -67,7 +72,9 @@ extension HomeVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch section {
         case 0:
-            return HomeTopView()
+            let view = HomeTopView()
+            view.delegate = self
+            return view
         default:
             return nil
         }
@@ -127,5 +134,10 @@ extension HomeVC: UITableViewDataSource {
                          sub: video.list[indexPath.row].sub)
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
     }
 }

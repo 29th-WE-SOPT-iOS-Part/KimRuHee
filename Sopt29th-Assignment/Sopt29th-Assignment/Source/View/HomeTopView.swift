@@ -14,9 +14,17 @@ import Then
     HomeVC의 가장 상단 로고와 메뉴가 있는 Navi View에 해당합니다
  */
 
+// MARK: - Protocol
+
+protocol ProfileButtonDelegate: HomeVC {
+    func clickProfileButton()
+}
+
 class HomeTopView: UIView {
     
     // MARK: - Properties
+    
+    public weak var delegate: ProfileButtonDelegate?
     
     private let logoImageView = UIImageView().then {
         $0.image = Const.Image.youtube
@@ -41,16 +49,17 @@ class HomeTopView: UIView {
         $0.setImage(Const.Image.search, for: .normal)
     }
     
-    private let profileButton = UIButton().then {
+    private lazy var profileButton = UIButton().then {
         $0.setImage(Const.Image.Profile, for: .normal)
+        $0.addTarget(self, action: #selector(touchupProfileButton(_:)), for: .touchUpInside)
     }
     
     // MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configUI()
         setupAutoLayout()
-        backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {
@@ -59,7 +68,11 @@ class HomeTopView: UIView {
     
     // MARK: - Custom Method
     
-    func setupAutoLayout() {
+    private func configUI() {
+        backgroundColor = .white
+    }
+    
+    private func setupAutoLayout() {
         addSubviews([logoImageView, buttonStackView, profileButton])
         buttonStackView.addArrangedSubviews([sharingButton, notificationButton, searchButton])
         
@@ -78,5 +91,11 @@ class HomeTopView: UIView {
             make.centerY.equalToSuperview()
             make.width.height.equalTo(24)
         } 
+    }
+    
+    // MARK: - @objc
+    
+    @objc func touchupProfileButton(_ sender: UIButton) {
+        delegate?.clickProfileButton()
     }
 }
