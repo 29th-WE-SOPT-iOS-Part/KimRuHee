@@ -135,4 +135,9 @@ extension HomeVC: UITableViewDataSource {
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+    }
 }

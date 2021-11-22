@@ -14,6 +14,7 @@ class AuthManager {
     // MARK: - Static Properties
     
     static let shared: AuthManager = AuthManager()
+    private init() { }
     
     // MARK: - Network Properties
 
