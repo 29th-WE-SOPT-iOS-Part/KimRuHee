@@ -17,6 +17,7 @@
 		5B2D50FE27520682006C91B8 /* DelegatePractiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D50FD27520682006C91B8 /* DelegatePractiveVC.swift */; };
 		5B2D510527520762006C91B8 /* KeywordCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D510327520762006C91B8 /* KeywordCVC.swift */; };
 		5B2D510627520762006C91B8 /* KeywordCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B2D510427520762006C91B8 /* KeywordCVC.xib */; };
+		5B2D510827521845006C91B8 /* GestureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D510727521845006C91B8 /* GestureVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5B2D50FD27520682006C91B8 /* DelegatePractiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegatePractiveVC.swift; sourceTree = "<group>"; };
 		5B2D510327520762006C91B8 /* KeywordCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCVC.swift; sourceTree = "<group>"; };
 		5B2D510427520762006C91B8 /* KeywordCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordCVC.xib; sourceTree = "<group>"; };
+		5B2D510727521845006C91B8 /* GestureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				5B2D50F42751FA91006C91B8 /* Info.plist */,
 				5B2D50EF2751FA91006C91B8 /* Assets.xcassets */,
 				5B2D50F12751FA91006C91B8 /* LaunchScreen.storyboard */,
+				5B2D510727521845006C91B8 /* GestureVC.swift */,
 			);
 			path = "Seventh Seminar";
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B2D510827521845006C91B8 /* GestureVC.swift in Sources */,
 				5B2D510527520762006C91B8 /* KeywordCVC.swift in Sources */,
 				5B2D50EB2751FA8E006C91B8 /* ViewController.swift in Sources */,
 				5B2D50E72751FA8E006C91B8 /* AppDelegate.swift in Sources */,

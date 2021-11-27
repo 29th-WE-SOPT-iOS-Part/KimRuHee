@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G8y-xF-PzM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dCT-gq-JAY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -151,18 +151,41 @@
             </objects>
             <point key="canvasLocation" x="2332" y="413"/>
         </scene>
-        <!--View Controller-->
+        <!--GestureVC-->
         <scene sceneID="kZU-aM-efE">
             <objects>
-                <viewController id="dCT-gq-JAY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GestureVC" title="GestureVC" id="dCT-gq-JAY" customClass="GestureVC" customModule="Seventh_Seminar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WKa-qw-Tqt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3g-XO-g0a">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="lbO-yY-IKQ"/>
+                                    <constraint firstAttribute="height" constant="128" id="oJy-So-a33"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jDf-9r-9ov"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Z3g-XO-g0a" firstAttribute="centerX" secondItem="WKa-qw-Tqt" secondAttribute="centerX" id="9Ad-JN-fEp"/>
+                            <constraint firstItem="Z3g-XO-g0a" firstAttribute="centerY" secondItem="WKa-qw-Tqt" secondAttribute="centerY" id="9f3-nl-sFA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainView" destination="Z3g-XO-g0a" id="rT5-cm-InS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="doq-Uz-F9o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ELE-7a-b65">
+                    <connections>
+                        <action selector="tapGesture:" destination="dCT-gq-JAY" id="Qaz-j1-ofU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3125" y="413"/>
         </scene>
@@ -170,6 +193,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
