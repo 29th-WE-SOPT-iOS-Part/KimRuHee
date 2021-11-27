@@ -45,6 +45,14 @@ extension DelegatePractiveVC: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KeywordCVC.id, for: indexPath) as? KeywordCVC else { return UICollectionViewCell() }
         cell.setKeyword(text: nameList[indexPath.row])
         cell.keywordDelegate = self
+        
+        if nameList[indexPath.row] == "김루희" {
+            cell.presentingClosure = {
+                guard let nextVC =
+                        self.storyboard?.instantiateViewController(withIdentifier: "SecondVC") else { return }
+                self.present(nextVC, animated: true, completion: nil)
+            }
+        }
         return cell
         
     }

@@ -18,6 +18,7 @@ class KeywordCVC: UICollectionViewCell {
     
     weak var keywordDelegate: KeywordCellDelegate?
     
+    var presentingClosure: (() -> ())?
     var keyword: String = ""
     var selectedKeyword: Bool = false
 
@@ -35,6 +36,7 @@ class KeywordCVC: UICollectionViewCell {
         } else {
             keywordDelegate?.keywordCellSelected(cell: self)
             keywordButton.backgroundColor = .black
+            presentingClosure?()
         }
         selectedKeyword.toggle()
     }
